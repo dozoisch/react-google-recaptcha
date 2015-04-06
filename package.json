@@ -1,0 +1,29 @@
+{
+  "name": "react-google-recaptcha",
+  "version": "0.0.1",
+  "description": "React Component Wrapper for Google reCAPTCHA",
+  "main": "lib/recaptcha.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dozoisch/react-google-recaptcha.git"
+  },
+  "keywords": [
+    "react",
+    "captcha",
+    "recaptcha",
+    "google-recaptcha"
+  ],
+  "author": "Hugo Dozois <hugo@dozoisch.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dozoisch/react-google-recaptcha/issues"
+  },
+  "homepage": "https://github.com/dozoisch/react-google-recaptcha",
+  "peerDependencies": {
+    "react": ">=0.13"
+  },
+  "devDependencies": {}
+}
