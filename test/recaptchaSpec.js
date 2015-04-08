@@ -5,7 +5,7 @@ import ReCAPTCHA from "../src/recaptcha";
 describe("ReCAPTCHA", function () {
   it("Should output a alert with message", function () {
     let instance = ReactTestUtils.renderIntoDocument(
-      <ReCAPTCHA siteKey="xxx" />
+      <ReCAPTCHA siteKey="xxx" onloadCallbackName="onloadcallback" />
     );
     assert.ok(ReactTestUtils.findRenderedDOMComponentWithTag(instance, "div"));
   });
