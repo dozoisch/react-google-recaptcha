@@ -1,0 +1,6 @@
+node_modules/
+test/
+tools/
+.gitignore
+.travis.yml
+karma.conf.js

@@ -63,9 +63,11 @@ The component also has some utility functions that can be called.
 - tests
 - examples
 - code coverage
-- eslint
+
+*The build is highly inspired by [react-bootstrap][rb]*
 
 [reCAPTCHA]: https://www.google.com/recaptcha
 [signup]: http://www.google.com/recaptcha/admin
 [docs]: https://developers.google.com/recaptcha
 [js_api]: https://developers.google.com/recaptcha/docs/display#js_api
+[rb]: https://github.com/react-bootstrap/react-bootstrap/

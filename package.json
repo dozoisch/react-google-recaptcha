@@ -2,9 +2,14 @@
   "name": "react-google-recaptcha",
   "version": "0.0.1",
   "description": "React Component Wrapper for Google reCAPTCHA",
-  "main": "lib/recaptcha.jsx",
+  "main": "lib/recaptcha.js",
+  "directories": {
+    "lib": "lib/"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node run-babel tools/build.js",
+    "lint": "eslint src test tools webpack karma.conf.js",
+    "test": "karma start --single-run"
   },
   "repository": {
     "type": "git",
@@ -12,6 +17,7 @@
   },
   "keywords": [
     "react",
+    "react-component",
     "captcha",
     "recaptcha",
     "google-recaptcha"
@@ -25,5 +31,30 @@
   "peerDependencies": {
     "react": ">=0.13"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel": "~5.0.10",
+    "babel-core": "~5.0.10",
+    "babel-eslint": "~2.0.2",
+    "babel-loader": "~5.0.0",
+    "chai": "^2.2.0",
+    "child-process-promise": "~1.0.2",
+    "colors": "~1.0.3",
+    "es5-shim": "~4.1.0",
+    "eslint": "~0.18.0",
+    "eslint-plugin-react": "~2.1.0",
+    "fs-promise": "~0.3.1",
+    "karma": "~0.12.31",
+    "karma-chai": "^0.1.0",
+    "karma-cli": "~0.0.4",
+    "karma-mocha": "~0.1.10",
+    "karma-mocha-reporter": "~1.0.2",
+    "karma-phantomjs-launcher": "~0.1.4",
+    "karma-sourcemap-loader": "~0.3.4",
+    "karma-webpack": "~1.5.0",
+    "lodash": "~3.6.0",
+    "mocha": "~2.2.3",
+    "react": "~0.13.1",
+    "webpack": "~1.8.0",
+    "yargs": "~3.7.0"
+  }
 }

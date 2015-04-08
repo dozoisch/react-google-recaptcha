@@ -1,0 +1,13 @@
+{
+  "env": {
+    "mocha": true
+  },
+  "globals": {
+    "assert": true,
+  },
+  "rules": {
+    "no-script-url": 1,
+    "no-unused-expressions": 0,
+    "react/no-multi-comp": 0
+  }
+}
