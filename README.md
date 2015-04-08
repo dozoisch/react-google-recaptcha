@@ -1,4 +1,9 @@
 # react-google-recaptcha
+
+[![Build Status][travis.img]][travis.url]
+[![Dependencies][deps.img]][deps.url]
+[![Dev Dependencies][devdeps.img]][devdeps.url]
+
 Component wrapper for [Google reCAPTCHA][reCAPTCHA]
 
 ## Installation
@@ -65,6 +70,13 @@ The component also has some utility functions that can be called.
 - code coverage
 
 *The build is highly inspired by [react-bootstrap][rb]*
+
+[travis.img]: https://travis-ci.org/dozoisch/react-google-recaptcha.svg?branch=master
+[travis.url]: https://travis-ci.org/dozoisch/react-google-recaptcha
+[deps.img]: https://david-dm.org/dozoisch/react-google-recaptcha.svg
+[deps.url]: https://david-dm.org/dozoisch/react-google-recaptcha
+[devdeps.img]: https://david-dm.org/dozoisch/react-google-recaptcha/dev-status.svg
+[devdeps.url]: https://david-dm.org/dozoisch/react-google-recaptcha#info=devDependencies
 
 [reCAPTCHA]: https://www.google.com/recaptcha
 [signup]: http://www.google.com/recaptcha/admin
