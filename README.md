@@ -1,6 +1,7 @@
 # react-google-recaptcha
 
 [![Build Status][travis.img]][travis.url]
+[![npm version][npm.img]][npm.url]
 [![Dependencies][deps.img]][deps.url]
 [![Dev Dependencies][devdeps.img]][devdeps.url]
 
@@ -42,7 +43,7 @@ React.render(
 />, document.body);
 ```
 
-###Rendering Props
+### Rendering Props
 
 Other properties can be used to customised the rendering.
 
@@ -73,6 +74,8 @@ The component also has some utility functions that can be called.
 
 [travis.img]: https://travis-ci.org/dozoisch/react-google-recaptcha.svg?branch=master
 [travis.url]: https://travis-ci.org/dozoisch/react-google-recaptcha
+[npm.img]: https://badge.fury.io/js/react-google-recaptcha.svg
+[npm.url]: http://badge.fury.io/js/react-google-recaptcha
 [deps.img]: https://david-dm.org/dozoisch/react-google-recaptcha.svg
 [deps.url]: https://david-dm.org/dozoisch/react-google-recaptcha
 [devdeps.img]: https://david-dm.org/dozoisch/react-google-recaptcha/dev-status.svg
