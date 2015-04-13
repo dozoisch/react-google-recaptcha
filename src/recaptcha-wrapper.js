@@ -1,6 +1,4 @@
 "use strict";
-import React, { PropTypes } from "react";
-
 import ReCAPTCHA from "./recaptcha";
 import makeAsyncScriptLoader from "react-async-script";
 

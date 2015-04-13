@@ -1,12 +1,12 @@
-/*global grecaptcha*/
 "use strict";
 import React, { PropTypes } from "react";
 
 const ReCAPTCHA = React.createClass({
-  displayName: "react-reCAPTCHA",
+  displayName: "reCAPTCHA",
   propTypes: {
     sitekey: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
+    grecaptcha: PropTypes.object,
     theme: PropTypes.oneOf(["dark", "light"]),
     type: PropTypes.oneOf(["image", "audio"]),
     tabindex: PropTypes.number,

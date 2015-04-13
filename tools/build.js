@@ -1,8 +1,6 @@
 /* eslint no-process-exit: 0 */
 import "colors";
-import path from "path";
 import lib from "./lib/build";
-import { exec, spawn } from "child-process-promise";
 
 export default function Build(noExitOnFailure) {
   let result = Promise.all([

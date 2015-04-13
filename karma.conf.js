@@ -19,7 +19,7 @@ module.exports = function (config) {
     ],
 
     preprocessors: {
-      "test/index.js": ["webpack", "sourcemap",],
+      "test/index.js": ["webpack", "sourcemap"],
     },
 
     webpack: webpackConfig,
