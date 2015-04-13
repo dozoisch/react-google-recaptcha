@@ -60,6 +60,6 @@
     "yargs": "~3.7.1"
   },
   "dependencies": {
-    "react-async-script": "~0.1.1"
+    "react-async-script": "~0.2.1"
   }
 }
