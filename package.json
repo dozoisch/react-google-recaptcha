@@ -1,6 +1,6 @@
 {
   "name": "react-google-recaptcha",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "React Component Wrapper for Google reCAPTCHA",
   "main": "lib/recaptcha-wrapper.js",
   "directories": {
@@ -60,6 +60,6 @@
     "yargs": "~3.7.1"
   },
   "dependencies": {
-    "react-async-script": "~0.2.1"
+    "react-async-script": "~0.2.2"
   }
 }

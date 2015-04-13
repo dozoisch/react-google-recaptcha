@@ -1,5 +1,8 @@
 #History
 
+##0.2.2
+- Bump react-async-script (bug 0.2.1)
+
 ##0.2.1
 - Small lint fixes
 - Updated react-async-script
