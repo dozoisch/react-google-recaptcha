@@ -1,23 +1,19 @@
 /*global grecaptcha*/
 "use strict";
-import React from "react";
-const PropTypes = React.PropTypes;
+import React, { PropTypes } from "react";
 
 const ReCAPTCHA = React.createClass({
   displayName: "react-reCAPTCHA",
   propTypes: {
     sitekey: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
-    onloadCallbackName: PropTypes.string.isRequired, // Name on the script tag onload query parameter
     theme: PropTypes.oneOf(["dark", "light"]),
     type: PropTypes.oneOf(["image", "audio"]),
-    elementId: PropTypes.string,
     tabindex: PropTypes.number,
-    onLoad: PropTypes.func,
     onExpired: PropTypes.func,
   },
 
-  getDefaultState() {
+  getInitialState() {
     return {};
   },
 
@@ -26,20 +22,19 @@ const ReCAPTCHA = React.createClass({
       theme: "light",
       type: "image",
       tabindex: 0,
-      elementId: "react-reCAPTCHA",
     };
   },
 
   getValue() {
-    if (typeof grecaptcha !== "undefined" && this.state.widgetId) {
-      return grecaptcha.getResponse(this.state.widgetId);
+    if (this.props.grecaptcha && this.state.widgetId) {
+      return this.props.grecaptcha.getResponse(this.state.widgetId);
     }
     return null;
   },
 
   reset() {
-    if (typeof grecaptcha !== "undefined" && this.state.widgetId) {
-      grecaptcha.reset(this.state.widgetId);
+    if (this.props.grecaptcha && this.state.widgetId) {
+      this.props.grecaptcha.reset(this.state.widgetId);
     }
   },
 
@@ -51,9 +46,10 @@ const ReCAPTCHA = React.createClass({
     }
   },
 
-  explicitRender() {
-    if (typeof grecaptcha !== "undefined") {
-      let id = grecaptcha.render(this.refs.captcha.getDOMNode(), {
+  explicitRender(cb) {
+    if (this.props.grecaptcha && !this.state.widgetId) {
+      this.refs.captcha.getDOMNode();
+      let id = this.props.grecaptcha.render(this.refs.captcha.getDOMNode(), {
         sitekey: this.props.sitekey,
         callback: this.props.onChange,
         theme: this.props.theme,
@@ -63,29 +59,23 @@ const ReCAPTCHA = React.createClass({
       });
       this.setState({
         widgetId: id,
-      });
-    }
-  },
-
-  handleLoad() {
-    this.explicitRender();
-    if (this.props.onLoad) {
-      this.props.onLoad();
+      }, cb);
     }
   },
 
   componentDidMount() {
-    // If script is not loaded, set the callback on window.
-    if (typeof grecaptcha === "undefined") {
-      window[this.props.onloadCallbackName] = this.handleLoad;
-    } else {
-      this.handleLoad();
-    }
+    this.explicitRender();
+  },
+
+  componentDidUpdate() {
+    this.explicitRender();
   },
 
   render() {
+    // consume properties owned by the reCATPCHA, pass the rest to the div so the user can style it.
+    let { sitekey, onChange, theme, type, tabindex, onExpired, ...childProps } = this.props;
     return (
-      <div ref="captcha" id={this.props.elementId} />
+      <div {...childProps} ref="captcha" />
     );
   }
 });

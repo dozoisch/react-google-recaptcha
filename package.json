@@ -2,14 +2,15 @@
   "name": "react-google-recaptcha",
   "version": "0.1.0",
   "description": "React Component Wrapper for Google reCAPTCHA",
-  "main": "lib/recaptcha.js",
+  "main": "lib/recaptcha-wrapper.js",
   "directories": {
     "lib": "lib/"
   },
   "scripts": {
     "build": "node run-babel tools/build.js",
     "lint": "eslint src test tools webpack karma.conf.js",
-    "test": "karma start --single-run"
+    "test": "karma start --single-run",
+    "test-watch": "karma start"
   },
   "repository": {
     "type": "git",
@@ -32,15 +33,15 @@
     "react": ">=0.13"
   },
   "devDependencies": {
-    "babel": "~5.0.10",
-    "babel-core": "~5.0.10",
+    "babel": "~5.0.12",
+    "babel-core": "~5.0.12",
     "babel-eslint": "~2.0.2",
     "babel-loader": "~5.0.0",
-    "chai": "^2.2.0",
+    "chai": "~2.2.0",
     "child-process-promise": "~1.0.2",
     "colors": "~1.0.3",
-    "es5-shim": "~4.1.0",
-    "eslint": "~0.18.0",
+    "es5-shim": "~4.1.1",
+    "eslint": "~0.19.0",
     "eslint-plugin-react": "~2.1.0",
     "fs-promise": "~0.3.1",
     "karma": "~0.12.31",
@@ -53,9 +54,12 @@
     "karma-sourcemap-loader": "~0.3.4",
     "karma-webpack": "~1.5.0",
     "lodash": "~3.6.0",
-    "mocha": "~2.2.3",
+    "mocha": "~2.2.4",
     "react": "~0.13.1",
-    "webpack": "~1.8.0",
-    "yargs": "~3.7.0"
+    "webpack": "~1.8.4",
+    "yargs": "~3.7.1"
+  },
+  "dependencies": {
+    "react-async-script": "~0.1.1"
   }
 }

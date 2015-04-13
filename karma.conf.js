@@ -1,5 +1,5 @@
 /* eslint no-var: 0 */
-require("babel/register");
+require("./register-babel");
 
 var webpackConfig = require("./webpack/test.config.js");
 var isCI = process.env.CONTINUOUS_INTEGRATION === "true";
@@ -19,19 +19,19 @@ module.exports = function (config) {
     ],
 
     preprocessors: {
-      "test/index.js": ["webpack", "sourcemap"]
+      "test/index.js": ["webpack", "sourcemap",],
     },
 
     webpack: webpackConfig,
 
     webpackMiddleware: {
-      noInfo: isCI
+      noInfo: isCI,
     },
 
-    reporters: ["mocha", "chai"],
+    reporters: ["mocha"],
 
     mochaReporter: {
-      output: "autowatch"
+      output: "autowatch",
     },
 
     port: 9876,
@@ -47,6 +47,6 @@ module.exports = function (config) {
     captureTimeout: 60000,
     browserNoActivityTimeout: 30000,
 
-    singleRun: isCI
+    singleRun: isCI,
   });
 };

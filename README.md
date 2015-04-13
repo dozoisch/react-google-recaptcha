@@ -15,17 +15,9 @@ npm install --save react-google-recaptcha
 
 ## Usage
 
-First of all [sign up for an API key pair][signup]. Then add the Google reCAPTCHA script tag to your html.
+All you need to do is [sign up for an API key pair][signup]. You will need the client key.
 
-The property set after `onload` is important and will be needed at render. This props is used to define a global callback, called by the Google script once it is loaded.
-
-See the [Google reCAPTCHA docs][docs] for more info.
-
-```html
-<script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=onloadCallback" async defer></script>
-```
-
-You can then use the reCAPTCHA
+You can then use the reCAPTCHA. The default require, imports a wrapped component that loads the reCAPTCHA script asynchronously.
 
 ```jsx
 var React = require("react");
@@ -37,9 +29,9 @@ function onChange(value) {
 
 React.render(
 <ReCATPCHA
-  sitekey="Your sitekey"
+  refs="recaptcha"
+  sitekey="Your client site key"
   onChange={onChange}
-  onloadCallbackName="onloadcallback"
 />, document.body);
 ```
 
@@ -51,19 +43,44 @@ Other properties can be used to customised the rendering.
 |:---- | ---- | ------ |
 | sitekey | string | The API client key |
 | onChange | func | The function to be called when the user completes successfully the captcha |
-| onloadCallbackName | string | The name the script will call onload. **This must be the same provided on script tag.**
 | theme | enum | *optional* `light` or `dark` The them of the widget *(__defaults:__ light)*
 | type | enum | *optional* `image` or `audio` The type of initial captcha *(__defaults:__ image)*
 | tabindex | number | *optional* The tabindex on the element *(__default:__ 0)*
-| onLoad | func | *optional* callback called when the widget has rendered
 | onExpired | func | *optional* callback when the challenge is expired and has to be redone by user. By default it will call the onChange with null to signify expired callback. |
 
 ## Component API
+
+**To retrieve the component, when using the wrapper, do `this.refs.recaptcha.getComponent()`**
 
 The component also has some utility functions that can be called.
 
 - `getValue()` returns the value of the captcha field
 - `reset()` forces reset. See the [JavaScript API doc][js_api]
+
+### Advanced usage
+
+You can also use the barebone components doing the following. Using that component will oblige you to manage the grecaptcha dep and load the script by yourself.
+
+```jsx
+var React = require("react");
+var ReCATPCHA = require("react-google-recaptcha/lib/recaptcha");
+
+var grecaptchaObject = grecaptcha // You must provide access to the google grecaptcha object.
+
+function onChange(value) {
+  console.log("Captcha value:", value);
+}
+
+React.render(
+<ReCATPCHA
+  refs="recaptcha"
+  sitekey="Your client site key"
+  onChange={onChange}
+  grecaptcha={grecaptchaObject}
+/>, document.body);
+```
+
+
 
 ## To Come Soon
 - tests

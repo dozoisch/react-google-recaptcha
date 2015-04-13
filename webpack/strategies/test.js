@@ -13,6 +13,5 @@ export default (config, options) => {
 
     return config;
   }
-
   return config;
 }
