@@ -1,5 +1,8 @@
 #History
 
+##0.2.0
+- Now loads the script using react-async-script! Usage is now way simpler
+
 ##0.1.0
 - Migrated to ES6
 - Added Travis
