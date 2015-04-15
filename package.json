@@ -33,9 +33,9 @@
     "react": ">=0.13"
   },
   "devDependencies": {
-    "babel": "~5.0.12",
-    "babel-core": "~5.0.12",
-    "babel-eslint": "~2.0.2",
+    "babel": "~5.1.9",
+    "babel-core": "~5.1.0",
+    "babel-eslint": "~3.0.1",
     "babel-loader": "~5.0.0",
     "chai": "~2.2.0",
     "child-process-promise": "~1.0.2",
@@ -57,7 +57,7 @@
     "mocha": "~2.2.4",
     "react": "~0.13.1",
     "webpack": "~1.8.4",
-    "yargs": "~3.7.1"
+    "yargs": "~3.7.2"
   },
   "dependencies": {
     "react-async-script": "~0.3.0"
