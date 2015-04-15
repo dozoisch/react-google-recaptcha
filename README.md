@@ -50,8 +50,6 @@ Other properties can be used to customised the rendering.
 
 ## Component API
 
-**To retrieve the component, when using the wrapper, do `this.refs.recaptcha.getComponent()`**
-
 The component also has some utility functions that can be called.
 
 - `getValue()` returns the value of the captcha field

@@ -2,21 +2,14 @@ import React from "react";
 import ReactTestUtils from "react/lib/ReactTestUtils";
 import ReCAPTCHA from "../src/recaptcha";
 
-describe("ReCAPTCHA", function () {
-  let callbackName = "onloadcallback";
-
-  afterEach(function () {
-    delete window.grecaptcha;
-    delete window.callbackName;
-  });
-
-  it("Rendered Component should be a div", function () {
+describe("ReCAPTCHA", () => {
+  it("Rendered Component should be a div", () => {
     let instance = ReactTestUtils.renderIntoDocument(
-      <ReCAPTCHA sitekey="xxx" onloadCallbackName={callbackName} />
+      <ReCAPTCHA sitekey="xxx" />
     );
     assert.equal(instance.getDOMNode().nodeName, "DIV");
   });
-  it("Rendered Component should contained passed props", function () {
+  it("Rendered Component should contained passed props", () => {
     let props = {
       className: "TheClassName",
       id: "superdefinedId",
@@ -28,7 +21,7 @@ describe("ReCAPTCHA", function () {
     assert.match(instance.getDOMNode().className, new RegExp(props.className));
   });
 
-  it("should call grecaptcha.render, when it is already loaded", function (done) {
+  it("should call grecaptcha.render, when it is already loaded", (done) => {
     let grecaptchaMock = {
       render(node, options) {
         assert.isNotNull(node);
@@ -41,7 +34,7 @@ describe("ReCAPTCHA", function () {
     );
     assert.ok(instance);
   });
-  it("reset, should call grecaptcha.reset with the widget id", function (done) {
+  it("reset, should call grecaptcha.reset with the widget id", (done) => {
     let grecaptchaMock = {
       render() {
         return "someWidgetId";
@@ -57,7 +50,7 @@ describe("ReCAPTCHA", function () {
     );
     instance.reset();
   });
-  describe("Expired", function () {
+  describe("Expired", () => {
     it("should call onChange with null when response is expired");
     it("should call onExpired when response is expired");
   });

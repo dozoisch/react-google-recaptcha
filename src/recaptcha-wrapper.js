@@ -9,4 +9,5 @@ const globalName = "grecaptcha";
 export default makeAsyncScriptLoader(ReCAPTCHA, URL, {
   callbackName: callbackName,
   globalName:globalName,
+  exposeFuncs: ["getValue", "reset"]
 });

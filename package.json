@@ -9,7 +9,7 @@
   "scripts": {
     "build": "node run-babel tools/build.js",
     "lint": "eslint src test tools webpack karma.conf.js",
-    "test": "karma start --single-run",
+    "test": "karma start --single-run && npm run build",
     "test-watch": "karma start"
   },
   "repository": {
@@ -60,6 +60,6 @@
     "yargs": "~3.7.1"
   },
   "dependencies": {
-    "react-async-script": "~0.2.2"
+    "react-async-script": "~0.3.0"
   }
 }
