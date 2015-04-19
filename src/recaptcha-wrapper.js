@@ -1,4 +1,3 @@
-"use strict";
 import ReCAPTCHA from "./recaptcha";
 import makeAsyncScriptLoader from "react-async-script";
 
