@@ -1,5 +1,10 @@
 # History
 
+## 0.3.1
+- Added babel runtime to deps
+- [#1] Removed unused use strict
+- Bump deps
+
 ## 0.3.0
 - Can now uses the recaptcha functions `getValue` `reset` directly from Wrapper without `getComponent` first.
 - bump deps
