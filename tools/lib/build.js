@@ -10,6 +10,6 @@ export default function BuildCommonJs() {
   console.log("Building: ".cyan + "npm module".green);
 
   return exec(`rm -rf ${lib}`)
-    .then(() => exec(`./node_modules/.bin/babel --optional es7.objectRestSpread ${src} --out-dir ${lib}`))
+    .then(() => exec(`./node_modules/.bin/babel --optional es7.objectRestSpread,runtime ${src} --out-dir ${lib}`))
     .then(() => console.log("Built: ".cyan + "npm module".green));
 }
