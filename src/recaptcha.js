@@ -1,4 +1,3 @@
-"use strict";
 import React, { PropTypes } from "react";
 
 const ReCAPTCHA = React.createClass({
