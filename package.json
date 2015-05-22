@@ -60,7 +60,7 @@
     "yargs": "~3.7.2"
   },
   "dependencies": {
-    "babel-runtime": "~5.1.11",
+    "babel-runtime": "~5.4.7",
     "react-async-script": "~0.3.1"
   }
 }
