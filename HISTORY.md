@@ -1,5 +1,8 @@
 # History
 
+## 0.3.2
+- Bump deps
+
 ## 0.3.1
 - Added babel runtime to deps
 - [#1] Removed unused use strict
