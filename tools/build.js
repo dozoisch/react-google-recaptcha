@@ -1,4 +1,4 @@
-/* eslint no-process-exit: 0 */
+/* eslint no-process-exit: 0, no-console: 0 */
 import "colors";
 import lib from "./lib/build";
 

@@ -12,49 +12,49 @@ const defaultOptions = {
   development: argv.debug,
   docs: false,
   test: false,
-  optimize: argv.optimizeMinimize
+  optimize: argv.optimizeMinimize,
 };
 
 export default (options) => {
   options = _.merge({}, defaultOptions, options);
-  const environment = options.development ? "development" : "production";
+  const environment = options.development || options.test ? "development" : "production";
 
   const config = {
     entry: {
-      "ReCAPTCHA": "./src/recaptcha.jsx"
+      ReCAPTCHA: "./src/recaptcha.jsx",
     },
 
     output: {
       path: "./dist",
       filename: "[name].js",
       library: "ReCAPTCHA",
-      libraryTarget: "umd"
+      libraryTarget: "umd",
     },
 
     externals: [
       {
-        "react": {
+        react: {
           root: "React",
           commonjs2: "react",
           commonjs: "react",
-          amd: "react"
-        }
-      }
+          amd: "react",
+        },
+      },
     ],
 
     module: {
       loaders: [
-        { test: /\.js/, loader: "babel?optional[]=es7.objectRestSpread&optional[]=runtime", exclude: /node_modules/ }
-      ]
+        { test: /\.js/, loader: "babel", exclude: /node_modules/ },
+      ],
     },
 
     plugins: [
       new webpack.DefinePlugin({
         "process.env": {
-          "NODE_ENV": JSON.stringify(environment)
-        }
-      })
-    ]
+          NODE_ENV: JSON.stringify(environment),
+        },
+      }),
+    ],
   };
 
   return strategies.reduce((conf, strategy) => {

@@ -14,7 +14,7 @@ let grecaptchaMock = {
   getResponse(widgetId) {
     assert.equal(widgetId, WIDGET_ID);
     return VALUE;
-  }
+  },
 };
 
 describe("ReCAPTCHAWrapper", () => {

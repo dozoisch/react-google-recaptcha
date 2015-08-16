@@ -1,3 +1,4 @@
+/* eslint no-console: 0 */
 import "colors";
 import path from "path";
 import { exec } from "child-process-promise";

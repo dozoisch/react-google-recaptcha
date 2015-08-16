@@ -6,9 +6,9 @@ export default (config, options) => {
       devtool: "inline-source-map",
       entry: undefined,
       output: {
-        pathinfo: true
+        pathinfo: true,
       },
-      externals: undefined
+      externals: undefined,
     });
 
     return config;

@@ -1,4 +1,5 @@
 {
+  "extends": ["defaults"],
   "env": {
     "browser": true,
     "node": true
@@ -11,13 +12,16 @@
     "react"
   ],
   "rules": {
-    "comma-dangle": "always",
+    "comma-dangle": [2, "always-multiline"],
     "comma-spacing": 1,
     "key-spacing": 0,
+    "no-mixed-spaces-and-tabs": 2,
+    "no-multiple-empty-lines": [1, { "max": 1}],
     "no-underscore-dangle": 0,
     "no-unused-vars": [1, { "vars": "all", "args": "none" }],
     "no-undef": 1,
     "no-var": 2,
+    "quote-props": [2, "as-needed"],
     "quotes": [2, "double"],
     "react/display-name": 0,
     "react/jsx-uses-react": 1,
@@ -28,6 +32,6 @@
     "react/react-in-jsx-scope": 1,
     "react/self-closing-comp": 1,
     "react/wrap-multilines": 1,
-    "strict": 0
+    "strict": [1, "never"]
   }
 }
