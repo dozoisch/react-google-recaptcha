@@ -21,14 +21,14 @@ You can then use the reCAPTCHA. The default require, imports a wrapped component
 
 ```jsx
 var React = require("react");
-var ReCATPCHA = require("react-google-recaptcha");
+var ReCAPTCHA = require("react-google-recaptcha");
 
 function onChange(value) {
   console.log("Captcha value:", value);
 }
 
 React.render(
-<ReCATPCHA
+<ReCAPTCHA
   refs="recaptcha"
   sitekey="Your client site key"
   onChange={onChange}
@@ -61,7 +61,7 @@ You can also use the barebone components doing the following. Using that compone
 
 ```jsx
 var React = require("react");
-var ReCATPCHA = require("react-google-recaptcha/lib/recaptcha");
+var ReCAPTCHA = require("react-google-recaptcha/lib/recaptcha");
 
 var grecaptchaObject = grecaptcha // You must provide access to the google grecaptcha object.
 
@@ -70,7 +70,7 @@ function onChange(value) {
 }
 
 React.render(
-<ReCATPCHA
+<ReCAPTCHA
   refs="recaptcha"
   sitekey="Your client site key"
   onChange={onChange}
