@@ -29,7 +29,7 @@ function onChange(value) {
 
 React.render(
 <ReCAPTCHA
-  refs="recaptcha"
+  ref="recaptcha"
   sitekey="Your client site key"
   onChange={onChange}
 />, document.body);
@@ -71,7 +71,7 @@ function onChange(value) {
 
 React.render(
 <ReCAPTCHA
-  refs="recaptcha"
+  ref="recaptcha"
   sitekey="Your client site key"
   onChange={onChange}
   grecaptcha={grecaptchaObject}
