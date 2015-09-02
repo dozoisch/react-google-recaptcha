@@ -73,8 +73,16 @@ const ReCAPTCHA = React.createClass({
     this.explicitRender();
   },
 
+  componentWillUnmount() {
+    Array.prototype.slice.call(document.getElementsByTagName('IFRAME')).forEach(element => {
+      if ('recaptcha-test' === element.title && element.parentNode) {
+        element.parentNode.removeChild(element);
+      }
+    });
+  },
+
   render() {
-    // consume properties owned by the reCATPCHA, pass the rest to the div so the user can style it.
+    // consume properties owned by the reCAPTCHA, pass the rest to the div so the user can style it.
     /* eslint-disable no-unused-vars */
     let { sitekey, onChange, theme, type, tabindex, onExpired, size, ...childProps } = this.props;
     /* eslint-enable no-unused-vars */
