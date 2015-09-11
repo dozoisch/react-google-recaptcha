@@ -75,7 +75,7 @@ const ReCAPTCHA = React.createClass({
 
   componentWillUnmount() {
     Array.prototype.slice.call(document.getElementsByTagName('IFRAME')).forEach(element => {
-      if ('recaptcha-test' === element.title && element.parentNode) {
+      if (element.src.indexOf('www.google.com/recaptcha') > -1 && element.parentNode) {
         element.parentNode.removeChild(element);
       }
     });
