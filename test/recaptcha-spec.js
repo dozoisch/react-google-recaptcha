@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import ReactTestUtils from "react/lib/ReactTestUtils";
 import ReCAPTCHA from "../src/recaptcha";
 
@@ -7,7 +8,7 @@ describe("ReCAPTCHA", () => {
     let instance = ReactTestUtils.renderIntoDocument(
       <ReCAPTCHA sitekey="xxx" />
     );
-    assert.equal(instance.getDOMNode().nodeName, "DIV");
+    assert.equal(ReactDOM.findDOMNode(instance).nodeName, "DIV");
   });
   it("Rendered Component should contained passed props", () => {
     let props = {
@@ -17,8 +18,8 @@ describe("ReCAPTCHA", () => {
     let instance = ReactTestUtils.renderIntoDocument(
       <ReCAPTCHA sitekey="xxx" {...props} />
     );
-    assert.equal(instance.getDOMNode().id, props.id);
-    assert.match(instance.getDOMNode().className, new RegExp(props.className));
+    assert.equal(ReactDOM.findDOMNode(instance).id, props.id);
+    assert.match(ReactDOM.findDOMNode(instance).className, new RegExp(props.className));
   });
 
   it("should call grecaptcha.render, when it is already loaded", (done) => {

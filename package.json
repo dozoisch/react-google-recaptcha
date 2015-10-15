@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/dozoisch/react-google-recaptcha",
   "peerDependencies": {
-    "react": ">=0.13"
+    "react": ">=0.14"
   },
   "devDependencies": {
     "babel": "~5.8.21",
@@ -56,10 +56,11 @@
     "karma-webpack": "~1.7.0",
     "lodash": "~3.10.1",
     "mocha": "~2.2.5",
-    "react": "~0.13.3",
+    "phantomjs": "^1.9.18",
+    "react": "~0.14.0",
+    "react-dom": "~0.14.0",
     "webpack": "~1.11.0",
     "yargs": "~3.19.0"
-
   },
   "dependencies": {
     "babel-runtime": "^5.8.0",

@@ -49,8 +49,8 @@ const ReCAPTCHA = React.createClass({
 
   explicitRender(cb) {
     if (this.props.grecaptcha && !this.state.widgetId) {
-      this.captcha.getDOMNode();
-      let id = this.props.grecaptcha.render(this.captcha.getDOMNode(), {
+      this.refs.captcha;
+      let id = this.props.grecaptcha.render(this.refs.captcha, {
         sitekey: this.props.sitekey,
         callback: this.props.onChange,
         theme: this.props.theme,
@@ -79,7 +79,7 @@ const ReCAPTCHA = React.createClass({
     let { sitekey, onChange, theme, type, tabindex, onExpired, size, ...childProps } = this.props;
     /* eslint-enable no-unused-vars */
     return (
-      <div {...childProps} ref={(component) => { this.captcha = component; }} />
+      <div {...childProps} ref="captcha" />
     );
   },
 });
