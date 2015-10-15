@@ -10,7 +10,10 @@
     "build": "node run-babel tools/build.js",
     "lint": "eslint src test tools webpack karma.conf.js",
     "test": "karma start --single-run && npm run build",
-    "test-watch": "karma start"
+    "test-watch": "karma start",
+    "patch": "release patch --run",
+    "minor": "release minor --run",
+    "major": "release major --run"
   },
   "repository": {
     "type": "git",
@@ -56,11 +59,13 @@
     "karma-webpack": "~1.7.0",
     "lodash": "~3.10.1",
     "mocha": "~2.2.5",
+    "mt-changelog": "^0.6.2",
     "phantomjs": "^1.9.18",
     "react": "~0.14.0",
     "react-dom": "~0.14.0",
     "webpack": "~1.11.0",
     "yargs": "~3.19.0"
+    "release-script": "^0.5.3",
   },
   "dependencies": {
     "babel-runtime": "^5.8.0",
