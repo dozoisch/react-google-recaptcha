@@ -5,12 +5,18 @@
 [![Dependencies][deps.img]][deps.url]
 [![Dev Dependencies][devdeps.img]][devdeps.url]
 
-Component wrapper for [Google reCAPTCHA][reCAPTCHA]
+Component wrapper for [Google reCAPTCHA v2][reCAPTCHA]
 
 ## Installation
 
 ```shell
 npm install --save react-google-recaptcha
+```
+
+### React 0.13
+With 0.13, install version 0.4.0
+```shell
+npm install --save react-google-recaptcha@0.4.0
 ```
 
 ## Usage
@@ -21,18 +27,21 @@ You can then use the reCAPTCHA. The default require, imports a wrapped component
 
 ```jsx
 var React = require("react");
+var render = require("react-dom").render
 var ReCAPTCHA = require("react-google-recaptcha");
 
 function onChange(value) {
   console.log("Captcha value:", value);
 }
 
-React.render(
-<ReCAPTCHA
-  ref="recaptcha"
-  sitekey="Your client site key"
-  onChange={onChange}
-/>, document.body);
+render(
+    <ReCAPTCHA
+      ref="recaptcha"
+      sitekey="Your client site key"
+      onChange={onChange}
+    />, 
+    document.body
+);
 ```
 
 ### Rendering Props
@@ -61,6 +70,7 @@ You can also use the barebone components doing the following. Using that compone
 
 ```jsx
 var React = require("react");
+var render = require("react-dom").render
 var ReCAPTCHA = require("react-google-recaptcha/lib/recaptcha");
 
 var grecaptchaObject = grecaptcha // You must provide access to the google grecaptcha object.
@@ -69,23 +79,16 @@ function onChange(value) {
   console.log("Captcha value:", value);
 }
 
-React.render(
-<ReCAPTCHA
-  ref="recaptcha"
-  sitekey="Your client site key"
-  onChange={onChange}
-  grecaptcha={grecaptchaObject}
-/>, document.body);
+render(
+    <ReCAPTCHA
+      ref="recaptcha"
+      sitekey="Your client site key"
+      onChange={onChange}
+      grecaptcha={grecaptchaObject}
+    />, 
+    document.body
+);
 ```
-
-
-
-## To Come Soon
-- tests
-- examples
-- code coverage
-
-*The build is highly inspired by [react-bootstrap][rb]*
 
 [travis.img]: https://travis-ci.org/dozoisch/react-google-recaptcha.svg?branch=master
 [travis.url]: https://travis-ci.org/dozoisch/react-google-recaptcha

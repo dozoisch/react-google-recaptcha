@@ -1,5 +1,3 @@
-# History
-
 # 0.4.0
 - Added Size Props |Merge #5
 - Fixed bug with refs
