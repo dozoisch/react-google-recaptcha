@@ -1,3 +1,12 @@
+v0.5.0 - Thu, 15 Oct 2015 21:38:43 GMT
+--------------------------------------
+
+- [d217dd1](../../commit/d217dd1) [changed] updated all deps
+- [fc3350a](../../commit/fc3350a) [added] mt-changelog and release-script
+- [dfa9bf2](../../commit/dfa9bf2) [added] doc for react 0.14 + old 0.13
+
+
+
 # 0.4.0
 - Added Size Props |Merge #5
 - Fixed bug with refs
