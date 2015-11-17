@@ -1,5 +1,8 @@
 # History
 
+# 0.4.1
+- Fixed issue with 0 ids
+
 # 0.4.0
 - Added Size Props |Merge #5
 - Fixed bug with refs
