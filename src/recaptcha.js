@@ -27,14 +27,14 @@ const ReCAPTCHA = React.createClass({
   },
 
   getValue() {
-    if (this.props.grecaptcha && this.state.widgetId) {
+    if (this.props.grecaptcha && this.state.widgetId !== undefined) {
       return this.props.grecaptcha.getResponse(this.state.widgetId);
     }
     return null;
   },
 
   reset() {
-    if (this.props.grecaptcha && this.state.widgetId) {
+    if (this.props.grecaptcha && this.state.widgetId !== undefined) {
       this.props.grecaptcha.reset(this.state.widgetId);
     }
   },
@@ -48,7 +48,7 @@ const ReCAPTCHA = React.createClass({
   },
 
   explicitRender(cb) {
-    if (this.props.grecaptcha && !this.state.widgetId) {
+    if (this.props.grecaptcha && this.state.widgetId === undefined) {
       this.captcha.getDOMNode();
       let id = this.props.grecaptcha.render(this.captcha.getDOMNode(), {
         sitekey: this.props.sitekey,
