@@ -56,6 +56,7 @@ Other properties can be used to customised the rendering.
 | type | enum | *optional* `image` or `audio` The type of initial captcha *(__defaults:__ image)*
 | tabindex | number | *optional* The tabindex on the element *(__default:__ 0)*
 | onExpired | func | *optional* callback when the challenge is expired and has to be redone by user. By default it will call the onChange with null to signify expired callback. |
+| stoken | string | *optional* set the stoken parameter, which allows the captcha to be used from different domains, see [reCAPTCHA secure-token] |
 
 ## Component API
 
@@ -104,3 +105,4 @@ render(
 [docs]: https://developers.google.com/recaptcha
 [js_api]: https://developers.google.com/recaptcha/docs/display#js_api
 [rb]: https://github.com/react-bootstrap/react-bootstrap/
+[reCAPTCHA secure-token]: https://developers.google.com/recaptcha/docs/secure_token
