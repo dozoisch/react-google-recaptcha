@@ -11,6 +11,7 @@ const ReCAPTCHA = React.createClass({
     tabindex: PropTypes.number,
     onExpired: PropTypes.func,
     size: PropTypes.oneOf(["compact", "normal"]),
+    stoken: PropTypes.string,
   },
 
   getInitialState() {
@@ -57,6 +58,7 @@ const ReCAPTCHA = React.createClass({
         tabindex: this.props.tabindex,
         "expired-callback": this.handleExpired,
         size: this.props.size,
+        stoken: this.props.stoken,
       });
       this.setState({
         widgetId: id,
