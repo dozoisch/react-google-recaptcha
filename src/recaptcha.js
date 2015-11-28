@@ -77,7 +77,7 @@ const ReCAPTCHA = React.createClass({
   render() {
     // consume properties owned by the reCATPCHA, pass the rest to the div so the user can style it.
     /* eslint-disable no-unused-vars */
-    let { sitekey, onChange, theme, type, tabindex, onExpired, size, ...childProps } = this.props;
+    let { sitekey, onChange, theme, type, tabindex, onExpired, size, stoken, ...childProps } = this.props;
     /* eslint-enable no-unused-vars */
     return (
       <div {...childProps} ref="captcha" />
