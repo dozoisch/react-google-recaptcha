@@ -14,9 +14,9 @@ npm install --save react-google-recaptcha
 ```
 
 ### React 0.13
-With 0.13, install version 0.4.0
+With 0.13, install version 0.4.1
 ```shell
-npm install --save react-google-recaptcha@0.4.0
+npm install --save react-google-recaptcha@0.4.1
 ```
 
 ## Usage
