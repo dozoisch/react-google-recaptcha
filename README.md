@@ -39,7 +39,7 @@ render(
       ref="recaptcha"
       sitekey="Your client site key"
       onChange={onChange}
-    />, 
+    />,
     document.body
 );
 ```
@@ -57,6 +57,14 @@ Other properties can be used to customised the rendering.
 | tabindex | number | *optional* The tabindex on the element *(__default:__ 0)*
 | onExpired | func | *optional* callback when the challenge is expired and has to be redone by user. By default it will call the onChange with null to signify expired callback. |
 | stoken | string | *optional* set the stoken parameter, which allows the captcha to be used from different domains, see [reCAPTCHA secure-token] |
+
+In order to translate the reCaptcha widget you should create a global variable configuring the desire language, if you don't provide it reCaptcha will pick up the user's interface language.
+
+```
+window.recaptchaOptions = {
+  lang: 'fr'
+}
+```
 
 ## Component API
 
@@ -86,7 +94,7 @@ render(
       sitekey="Your client site key"
       onChange={onChange}
       grecaptcha={grecaptchaObject}
-    />, 
+    />,
     document.body
 );
 ```
