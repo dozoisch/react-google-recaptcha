@@ -1,3 +1,10 @@
+v0.5.4 - Tue, 19 Jul 2016 21:46:12 GMT
+--------------------------------------
+
+- [cb679d7](../../commit/cb679d7) [fixed] issue with react 15.2 warnings for unknown props
+
+
+
 v0.5.3 - Tue, 03 May 2016 01:57:36 GMT
 --------------------------------------
 
