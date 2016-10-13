@@ -69,8 +69,12 @@ const ReCAPTCHA = React.createClass({
   componentDidMount() {
     this.explicitRender();
   },
+  
+  shouldComponentUpdate() {
+    return false;
+  },
 
-  componentDidUpdate() {
+  componentWillReceiveProps() {
     this.explicitRender();
   },
 
