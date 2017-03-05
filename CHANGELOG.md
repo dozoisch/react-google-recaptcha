@@ -1,7 +1,8 @@
 v0.6.0 - Sun, 05 Mar 2017 02:45:00 GMT
 --------------------------------------
 
-- [3c92d6d](../../commit/3c92d6d) [changed] Updated babel, react and dropped 0.10, 0.12
+- [3c92d6d](../../commit/3c92d6d) [changed] Updated babel, react and dropped 0.10, 0.12 (#30)
+- [7c8424c](../../commit/7c8424c) make dependencies more friendly for consuming packages (#29)
 
 
 
