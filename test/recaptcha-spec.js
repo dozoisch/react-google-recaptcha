@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import ReactTestUtils from "react/lib/ReactTestUtils";
+import ReactTestUtils from "react-addons-test-utils";
 import ReCAPTCHA from "../src/recaptcha";
 
 describe("ReCAPTCHA", () => {

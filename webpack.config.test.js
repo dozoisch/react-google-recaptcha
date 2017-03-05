@@ -1,5 +1,5 @@
-import { DefinePlugin } from "webpack";
-export default {
+const DefinePlugin = require("webpack").DefinePlugin;
+module.exports = {
   output: {
     pathinfo: true,
   },
@@ -7,7 +7,7 @@ export default {
 
   module: {
     loaders: [
-      { test: /\.js/, loader: "babel", exclude: /node_modules/ },
+      { test: /\.js/, loader: "babel-loader", exclude: /node_modules/ },
     ],
   },
   plugins: [
