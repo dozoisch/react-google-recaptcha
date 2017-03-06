@@ -10,7 +10,7 @@ Component wrapper for [Google reCAPTCHA v2][reCAPTCHA]
 ## Installation
 
 ```shell
-npm install --save react-google-recaptcha
+npm install --save react-google-recaptcha react-async-script
 ```
 
 ### React 0.13
