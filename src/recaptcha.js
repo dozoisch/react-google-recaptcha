@@ -10,7 +10,7 @@ const ReCAPTCHA = React.createClass({
     type: PropTypes.oneOf(["image", "audio"]),
     tabindex: PropTypes.number,
     onExpired: PropTypes.func,
-    size: PropTypes.oneOf(["compact", "normal"]),
+    size: PropTypes.oneOf(["compact", "normal", "invisible"]),
     stoken: PropTypes.string,
   },
 
@@ -32,6 +32,15 @@ const ReCAPTCHA = React.createClass({
       return this.props.grecaptcha.getResponse(this.state.widgetId);
     }
     return null;
+  },
+
+  execute() {
+    const { grecaptcha } = this.props;
+    const { widgetId } = this.state;
+
+    if (grecaptcha && widgetId !== undefined) {
+      return grecaptcha.execute(widgetId);
+    }
   },
 
   reset() {
