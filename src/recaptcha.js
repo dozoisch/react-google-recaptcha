@@ -10,15 +10,15 @@ const ReCAPTCHA = React.createClass({
     type: PropTypes.oneOf(["image", "audio"]),
     tabindex: PropTypes.number,
     onExpired: PropTypes.func,
-    size: PropTypes.oneOf(["compact", "normal"]),
+    size: PropTypes.oneOf(["compact", "normal", "invisible"]),
     stoken: PropTypes.string,
   },
 
-  getInitialState() {
+  getInitialState () {
     return {};
   },
 
-  getDefaultProps() {
+  getDefaultProps () {
     return {
       theme: "light",
       type: "image",
@@ -27,20 +27,29 @@ const ReCAPTCHA = React.createClass({
     };
   },
 
-  getValue() {
+  getValue () {
     if (this.props.grecaptcha && this.state.widgetId !== undefined) {
       return this.props.grecaptcha.getResponse(this.state.widgetId);
     }
     return null;
   },
 
-  reset() {
+  execute () {
+    const { grecaptcha } = this.props;
+    const { widgetId } = this.state;
+
+    if (grecaptcha && widgetId !== undefined) {
+      return grecaptcha.execute(widgetId);
+    }
+  },
+
+  reset () {
     if (this.props.grecaptcha && this.state.widgetId !== undefined) {
       this.props.grecaptcha.reset(this.state.widgetId);
     }
   },
 
-  handleExpired() {
+  handleExpired () {
     if (this.props.onExpired) {
       this.props.onExpired();
     } else if (this.props.onChange) {
@@ -48,9 +57,9 @@ const ReCAPTCHA = React.createClass({
     }
   },
 
-  explicitRender(cb) {
+  explicitRender (cb) {
     if (this.props.grecaptcha && this.state.widgetId === undefined) {
-      let id = this.props.grecaptcha.render(this.refs.captcha, {
+      const id = this.props.grecaptcha.render(this.refs.captcha, {
         sitekey: this.props.sitekey,
         callback: this.props.onChange,
         theme: this.props.theme,
@@ -66,15 +75,15 @@ const ReCAPTCHA = React.createClass({
     }
   },
 
-  componentDidMount() {
+  componentDidMount () {
     this.explicitRender();
   },
 
-  componentDidUpdate() {
+  componentDidUpdate () {
     this.explicitRender();
   },
 
-  render() {
+  render () {
     // consume properties owned by the reCATPCHA, pass the rest to the div so the user can style it.
     /* eslint-disable no-unused-vars */
     const { sitekey, onChange, theme, type, tabindex, onExpired, size, stoken, grecaptcha, ...childProps } = this.props;
