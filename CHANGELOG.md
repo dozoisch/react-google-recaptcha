@@ -1,6 +1,8 @@
 v0.7.0 - Thu, 16 Mar 2017 17:11:15 GMT
 --------------------------------------
 
+- [4eda897](../../commit/4eda897) Added Invisible example to README.md
+- [34d5e0c](../../commit/34d5e0c) Add invisible props and execute method (#34)
 - [cbfe092](../../commit/cbfe092) [added] install of react-async-script in readme
 
 
