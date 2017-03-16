@@ -1,3 +1,10 @@
+v0.7.0 - Thu, 16 Mar 2017 17:11:15 GMT
+--------------------------------------
+
+- [cbfe092](../../commit/cbfe092) [added] install of react-async-script in readme
+
+
+
 v0.6.0 - Sun, 05 Mar 2017 02:45:00 GMT
 --------------------------------------
 
