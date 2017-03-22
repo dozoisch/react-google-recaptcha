@@ -12,6 +12,7 @@ const ReCAPTCHA = React.createClass({
     onExpired: PropTypes.func,
     size: PropTypes.oneOf(["compact", "normal", "invisible"]),
     stoken: PropTypes.string,
+    badge: PropTypes.oneOf(["bottomright", "bottomleft ", "inline"])
   },
 
   getInitialState () {
@@ -24,6 +25,7 @@ const ReCAPTCHA = React.createClass({
       type: "image",
       tabindex: 0,
       size: "normal",
+      badge: "bottomright"
     };
   },
 
@@ -68,6 +70,7 @@ const ReCAPTCHA = React.createClass({
         "expired-callback": this.handleExpired,
         size: this.props.size,
         stoken: this.props.stoken,
+        badge: this.props.badge
       });
       this.setState({
         widgetId: id,
@@ -86,7 +89,7 @@ const ReCAPTCHA = React.createClass({
   render () {
     // consume properties owned by the reCATPCHA, pass the rest to the div so the user can style it.
     /* eslint-disable no-unused-vars */
-    const { sitekey, onChange, theme, type, tabindex, onExpired, size, stoken, grecaptcha, ...childProps } = this.props;
+    const { sitekey, onChange, theme, type, tabindex, onExpired, size, stoken, grecaptcha, badge, ...childProps } = this.props;
     /* eslint-enable no-unused-vars */
     return (
       <div {...childProps} ref="captcha" />
