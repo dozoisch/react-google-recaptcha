@@ -1,6 +1,7 @@
 v0.8.0 - Fri, 24 Mar 2017 00:54:19 GMT
 --------------------------------------
 
+- [883210e](../../commit/883210e) Added support for badge attribute (#36)
 
 
 
