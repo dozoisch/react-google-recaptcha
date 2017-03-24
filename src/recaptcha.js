@@ -12,7 +12,7 @@ const ReCAPTCHA = React.createClass({
     onExpired: PropTypes.func,
     size: PropTypes.oneOf(["compact", "normal", "invisible"]),
     stoken: PropTypes.string,
-    badge: PropTypes.oneOf(["bottomright", "bottomleft ", "inline"])
+    badge: PropTypes.oneOf(["bottomright", "bottomleft ", "inline"]),
   },
 
   getInitialState () {
@@ -25,7 +25,7 @@ const ReCAPTCHA = React.createClass({
       type: "image",
       tabindex: 0,
       size: "normal",
-      badge: "bottomright"
+      badge: "bottomright",
     };
   },
 
@@ -70,7 +70,7 @@ const ReCAPTCHA = React.createClass({
         "expired-callback": this.handleExpired,
         size: this.props.size,
         stoken: this.props.stoken,
-        badge: this.props.badge
+        badge: this.props.badge,
       });
       this.setState({
         widgetId: id,
