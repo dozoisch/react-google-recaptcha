@@ -58,6 +58,7 @@ Other properties can be used to customised the rendering.
 | onExpired | func | *optional* callback when the challenge is expired and has to be redone by user. By default it will call the onChange with null to signify expired callback. |
 | stoken | string | *optional* set the stoken parameter, which allows the captcha to be used from different domains, see [reCAPTCHA secure-token] |
 | size | enum | *optional* `compact`, `normal` or `invisible`. This allows you to change the size or do an invisible captcha |
+| badge | enum | *optional* `bottomright`, `bottomleft` or `inline`. Positions reCAPTCHA badge |
 
 
 In order to translate the reCaptcha widget you should create a global variable configuring the desire language, if you don't provide it reCaptcha will pick up the user's interface language.
