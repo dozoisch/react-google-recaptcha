@@ -46,13 +46,13 @@ render(
 
 ### Rendering Props
 
-Other properties can be used to customised the rendering.
+Other properties can be used to customise the rendering.
 
 | Name | Type | Description |
 |:---- | ---- | ------ |
 | sitekey | string | The API client key |
-| onChange | func | The function to be called when the user completes successfully the captcha |
-| theme | enum | *optional* `light` or `dark` The them of the widget *(__defaults:__ light)*
+| onChange | func | The function to be called when the user successfully completes the captcha |
+| theme | enum | *optional* `light` or `dark` The theme of the widget *(__defaults:__ light)*
 | type | enum | *optional* `image` or `audio` The type of initial captcha *(__defaults:__ image)*
 | tabindex | number | *optional* The tabindex on the element *(__default:__ 0)*
 | onExpired | func | *optional* callback when the challenge is expired and has to be redone by user. By default it will call the onChange with null to signify expired callback. |
@@ -61,9 +61,9 @@ Other properties can be used to customised the rendering.
 | badge | enum | *optional* `bottomright`, `bottomleft` or `inline`. Positions reCAPTCHA badge |
 
 
-In order to translate the reCaptcha widget you should create a global variable configuring the desire language, if you don't provide it reCaptcha will pick up the user's interface language.
+In order to translate the reCaptcha widget, you should create a global variable configuring the desired language. If you don't provide it, reCaptcha will pick up the user's interface language.
 
-```
+```js
 window.recaptchaOptions = {
   lang: 'fr'
 }
