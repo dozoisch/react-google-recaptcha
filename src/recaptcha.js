@@ -1,65 +1,43 @@
-import React, { PropTypes } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 
-const ReCAPTCHA = React.createClass({
-  displayName: "reCAPTCHA",
-  propTypes: {
-    sitekey: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired,
-    grecaptcha: PropTypes.object,
-    theme: PropTypes.oneOf(["dark", "light"]),
-    type: PropTypes.oneOf(["image", "audio"]),
-    tabindex: PropTypes.number,
-    onExpired: PropTypes.func,
-    size: PropTypes.oneOf(["compact", "normal", "invisible"]),
-    stoken: PropTypes.string,
-    badge: PropTypes.oneOf(["bottomright", "bottomleft ", "inline"]),
-  },
+export default class ReCAPTCHA extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
 
-  getInitialState () {
-    return {};
-  },
-
-  getDefaultProps () {
-    return {
-      theme: "light",
-      type: "image",
-      tabindex: 0,
-      size: "normal",
-      badge: "bottomright",
-    };
-  },
-
-  getValue () {
+  getValue() {
     if (this.props.grecaptcha && this.state.widgetId !== undefined) {
       return this.props.grecaptcha.getResponse(this.state.widgetId);
     }
     return null;
-  },
+  }
 
-  execute () {
+  execute() {
     const { grecaptcha } = this.props;
     const { widgetId } = this.state;
 
     if (grecaptcha && widgetId !== undefined) {
       return grecaptcha.execute(widgetId);
     }
-  },
+  }
 
-  reset () {
+  reset() {
     if (this.props.grecaptcha && this.state.widgetId !== undefined) {
       this.props.grecaptcha.reset(this.state.widgetId);
     }
-  },
+  }
 
-  handleExpired () {
+  handleExpired() {
     if (this.props.onExpired) {
       this.props.onExpired();
     } else if (this.props.onChange) {
       this.props.onChange(null);
     }
-  },
+  }
 
-  explicitRender (cb) {
+  explicitRender(cb) {
     if (this.props.grecaptcha && this.state.widgetId === undefined) {
       const id = this.props.grecaptcha.render(this.refs.captcha, {
         sitekey: this.props.sitekey,
@@ -76,17 +54,17 @@ const ReCAPTCHA = React.createClass({
         widgetId: id,
       }, cb);
     }
-  },
+  }
 
-  componentDidMount () {
+  componentDidMount() {
     this.explicitRender();
-  },
+  }
 
-  componentDidUpdate () {
+  componentDidUpdate() {
     this.explicitRender();
-  },
+  }
 
-  render () {
+  render() {
     // consume properties owned by the reCATPCHA, pass the rest to the div so the user can style it.
     /* eslint-disable no-unused-vars */
     const { sitekey, onChange, theme, type, tabindex, onExpired, size, stoken, grecaptcha, badge, ...childProps } = this.props;
@@ -94,7 +72,26 @@ const ReCAPTCHA = React.createClass({
     return (
       <div {...childProps} ref="captcha" />
     );
-  },
-});
+  }
+}
 
-export default ReCAPTCHA;
+ReCAPTCHA.displayName = "ReCAPTCHA";
+ReCAPTCHA.propTypes = {
+  sitekey: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  grecaptcha: PropTypes.object,
+  theme: PropTypes.oneOf(["dark", "light"]),
+  type: PropTypes.oneOf(["image", "audio"]),
+  tabindex: PropTypes.number,
+  onExpired: PropTypes.func,
+  size: PropTypes.oneOf(["compact", "normal", "invisible"]),
+  stoken: PropTypes.string,
+  badge: PropTypes.oneOf(["bottomright", "bottomleft ", "inline"]),
+};
+ReCAPTCHA.defaultProps = {
+  theme: "light",
+  type: "image",
+  tabindex: 0,
+  size: "normal",
+  badge: "bottomright",
+};

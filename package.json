@@ -34,8 +34,8 @@
   },
   "homepage": "https://github.com/dozoisch/react-google-recaptcha",
   "peerDependencies": {
-    "react": ">=0.14",
-    "react-async-script": ">= 0.6.0"
+    "react": ">=0.15.5",
+    "react-async-script": ">= 0.9.0"
   },
   "devDependencies": {
     "babel-cli": "^6.0.0",
@@ -65,11 +65,13 @@
     "mocha": "~2.3.3",
     "mt-changelog": "^0.6.2",
     "phantomjs": "^1.9.18",
-    "react": "^15.4.2",
-    "react-addons-test-utils": "^15.4.2",
-    "react-async-script": "^0.6.0",
-    "react-dom": "^15.4.2",
+    "react": "^15.5.0",
+    "react-async-script": "^0.9.0",
+    "react-dom": "^15.5.0",
     "release-script": "^0.5.3",
     "webpack": "~1.14.0"
+  },
+  "dependencies": {
+    "prop-types": ">=15.5.0"
   }
 }

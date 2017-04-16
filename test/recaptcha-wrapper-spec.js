@@ -1,5 +1,5 @@
 import React from "react";
-import ReactTestUtils from "react-addons-test-utils";
+import ReactTestUtils from "react-dom/test-utils";
 import ReCAPTCHA from "../src/recaptcha-wrapper"; // eslint-disable-line no-unused-vars
 
 const VALUE = "some value";
@@ -20,6 +20,9 @@ const grecaptchaMock = {
 describe("ReCAPTCHAWrapper", () => {
   beforeEach(() => {
     window.grecaptcha = grecaptchaMock;
+  });
+  it("should be wrapped properly", () => {
+    assert.equal(ReCAPTCHA.displayName, "AsyncScriptLoader(ReCAPTCHA)");
   });
   it("should proxy functions", () => {
     const instance = ReactTestUtils.renderIntoDocument(
