@@ -13,6 +13,12 @@ Component wrapper for [Google reCAPTCHA v2][reCAPTCHA]
 npm install --save react-google-recaptcha react-async-script
 ```
 
+### React < 15.5
+With version prior to 15.5
+```shell
+npm install --save react-google-recaptcha@0.8.1
+```
+
 ### React 0.13
 With 0.13, install version 0.4.1
 ```shell
