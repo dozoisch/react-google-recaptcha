@@ -35,7 +35,7 @@
   "homepage": "https://github.com/dozoisch/react-google-recaptcha",
   "peerDependencies": {
     "react": ">=0.15.5",
-    "react-async-script": ">= 0.9.0"
+    "react-async-script": ">=0.9.0"
   },
   "devDependencies": {
     "babel-cli": "^6.0.0",
