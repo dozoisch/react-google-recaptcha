@@ -1,3 +1,10 @@
+v0.9.3 - Mon, 24 Apr 2017 16:31:56 GMT
+--------------------------------------
+
+- [cb041a3](../../commit/cb041a3) [fixed] issue with handleExpired not being bound
+
+
+
 v0.9.2 - Thu, 20 Apr 2017 01:10:09 GMT
 --------------------------------------
 
