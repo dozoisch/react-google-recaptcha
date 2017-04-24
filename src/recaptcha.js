@@ -5,6 +5,7 @@ export default class ReCAPTCHA extends React.Component {
   constructor() {
     super();
     this.state = {};
+    this.handleExpired = this.handleExpired.bind(this);
   }
 
   getValue() {
