@@ -29,10 +29,10 @@ npm install --save react-google-recaptcha@0.4.1
 
 All you need to do is [sign up for an API key pair][signup]. You will need the client key.
 
-You can then use the reCAPTCHA. The default require, imports a wrapped component that loads the reCAPTCHA script asynchronously.
+You can then use the reCAPTCHA. The default require imports a wrapped component that loads the reCAPTCHA script asynchronously.
 
 ```jsx
-var React = require("react");
+var React = require("react").default;
 var render = require("react-dom").render
 var ReCAPTCHA = require("react-google-recaptcha");
 
@@ -58,7 +58,7 @@ Other properties can be used to customise the rendering.
 |:---- | ---- | ------ |
 | sitekey | string | The API client key |
 | onChange | func | The function to be called when the user successfully completes the captcha |
-| theme | enum | *optional* `light` or `dark` The theme of the widget *(__defaults:__ light)*
+| theme | enum | *optional* `light` or `dark` The theme of the widget *(__defaults:__ light)*. See [example][docs_theme]
 | type | enum | *optional* `image` or `audio` The type of initial captcha *(__defaults:__ image)*
 | tabindex | number | *optional* The tabindex on the element *(__default:__ 0)*
 | onExpired | func | *optional* callback when the challenge is expired and has to be redone by user. By default it will call the onChange with null to signify expired callback. |
@@ -88,10 +88,10 @@ The component also has some utility functions that can be called.
 
 Starting with 0.7.0, the component now supports invisible options. See the [reCAPTCHA documentation](https://developers.google.com/recaptcha/docs/invisible) to see how to configure it.
 
-With the invisible option, you need to handle things a bit differently. You will need to call the execute method by yourself.
+With the invisible option, you need to handle things a bit differently. You will need to call the `execute` method yourself.
 
 ```jsx
-var React = require("react");
+var React = require("react").default;
 var render = require("react-dom").render
 var ReCAPTCHA = require("react-google-recaptcha");
 
@@ -120,7 +120,7 @@ render(
 You can also use the barebone components doing the following. Using that component will oblige you to manage the grecaptcha dep and load the script by yourself.
 
 ```jsx
-var React = require("react");
+var React = require("react").default;
 var render = require("react-dom").render
 var ReCAPTCHA = require("react-google-recaptcha/lib/recaptcha");
 
@@ -153,6 +153,7 @@ render(
 [reCAPTCHA]: https://www.google.com/recaptcha
 [signup]: http://www.google.com/recaptcha/admin
 [docs]: https://developers.google.com/recaptcha
+[docs_theme]: https://developers.google.com/recaptcha/docs/faq#can-i-customize-the-recaptcha-widget
 [js_api]: https://developers.google.com/recaptcha/docs/display#js_api
 [rb]: https://github.com/react-bootstrap/react-bootstrap/
 [reCAPTCHA secure-token]: https://developers.google.com/recaptcha/docs/secure_token
