@@ -8,6 +8,8 @@ export default class ReCAPTCHA extends React.Component {
     this.handleExpired = this.handleExpired.bind(this);
   }
 
+  captchaEl = null;
+
   getValue() {
     if (this.props.grecaptcha && this.state.widgetId !== undefined) {
       return this.props.grecaptcha.getResponse(this.state.widgetId);
@@ -40,7 +42,7 @@ export default class ReCAPTCHA extends React.Component {
 
   explicitRender(cb) {
     if (this.props.grecaptcha && this.state.widgetId === undefined) {
-      const id = this.props.grecaptcha.render(this.refs.captcha, {
+      const id = this.props.grecaptcha.render(this.captchaEl, {
         sitekey: this.props.sitekey,
         callback: this.props.onChange,
         theme: this.props.theme,
@@ -71,7 +73,7 @@ export default class ReCAPTCHA extends React.Component {
     const { sitekey, onChange, theme, type, tabindex, onExpired, size, stoken, grecaptcha, badge, ...childProps } = this.props;
     /* eslint-enable no-unused-vars */
     return (
-      <div {...childProps} ref="captcha" />
+      <div {...childProps} ref={(el) => { this.captchaEl = el; }} />
     );
   }
 }
