@@ -22,6 +22,8 @@ export default class ReCAPTCHA extends React.Component {
 
     if (grecaptcha && widgetId !== undefined) {
       return grecaptcha.execute(widgetId);
+    } else {
+      this._executeRequested = true;
     }
   }
 
@@ -55,6 +57,10 @@ export default class ReCAPTCHA extends React.Component {
       this.setState({
         widgetId: id,
       }, cb);
+    }
+    if (this._executeRequested && this.props.grecaptcha && this.state.widgetId !== undefined) {
+      this._executeRequested = false;
+      this.execute();
     }
   }
 
