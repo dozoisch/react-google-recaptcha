@@ -98,7 +98,7 @@ ReCAPTCHA.propTypes = {
   onExpired: PropTypes.func,
   size: PropTypes.oneOf(["compact", "normal", "invisible"]),
   stoken: PropTypes.string,
-  badge: PropTypes.oneOf(["bottomright", "bottomleft ", "inline"]),
+  badge: PropTypes.oneOf(["bottomright", "bottomleft", "inline"]),
 };
 ReCAPTCHA.defaultProps = {
   theme: "light",
