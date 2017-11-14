@@ -56,7 +56,7 @@ export default class ReCAPTCHA extends React.Component {
         theme: this.props.theme,
         type: this.props.type,
         tabindex: this.props.tabindex,
-        "expired-callback": this.handleExpired,
+        "expired-callback": this.handleExpired.bind(this),
         size: this.props.size,
         stoken: this.props.stoken,
         badge: this.props.badge,
