@@ -50,7 +50,8 @@ export default class ReCAPTCHA extends React.Component {
 
   explicitRender(cb) {
     if (this.props.grecaptcha && this.state.widgetId === undefined) {
-      const id = this.props.grecaptcha.render(this.captcha, {
+      const wrapper = document.createElement("div");
+      const id = this.props.grecaptcha.render(wrapper, {
         sitekey: this.props.sitekey,
         callback: this.props.onChange,
         theme: this.props.theme,
@@ -61,6 +62,8 @@ export default class ReCAPTCHA extends React.Component {
         stoken: this.props.stoken,
         badge: this.props.badge,
       });
+      this.captcha.appendChild(wrapper);
+
       this.setState({
         widgetId: id,
       }, cb);
@@ -77,6 +80,15 @@ export default class ReCAPTCHA extends React.Component {
 
   componentDidUpdate() {
     this.explicitRender();
+  }
+
+  componentWillUnmount() {
+    if (this.state.widgetId !== undefined) {
+      while (this.captcha.firstChild) {
+        this.captcha.removeChild(this.captcha.firstChild);
+      }
+      this.reset();
+    }
   }
 
   handleRecaptchaRef(elem) {
