@@ -1,6 +1,7 @@
 v0.9.8 - Tue, 28 Nov 2017 04:07:05 GMT
 --------------------------------------
 
+- [7cd1254](../../commit/7cd1254) Fix peerDependency of react
 
 
 
@@ -8,13 +9,15 @@ v0.9.8 - Tue, 28 Nov 2017 04:07:05 GMT
 v0.9.7 - Thu, 10 Aug 2017 00:04:43 GMT
 --------------------------------------
 
-
+- [e5f6fd9](../../commit/e5f6fd9) Add an accessor for widgetid (#53)
+- [8932900](../../commit/8932900) Fixed PropTypes warning due to extra space (#51)
 
 
 
 v0.9.6 - Tue, 20 Jun 2017 16:20:26 GMT
 --------------------------------------
 
+- [9796adb](../../commit/9796adb) Fix race on execute() (#49)
 
 
 
@@ -22,14 +25,15 @@ v0.9.6 - Tue, 20 Jun 2017 16:20:26 GMT
 v0.9.5 - Fri, 02 Jun 2017 09:26:50 GMT
 --------------------------------------
 
-
-
+- Fixed release
 
 
 v0.9.4 - Fri, 02 Jun 2017 09:26:02 GMT
 --------------------------------------
 
-
+- [89a1c0e](../../commit/89a1c0e) Changed ref to use function instead of dep strings
+- [5c8a04d](../../commit/5c8a04d) Update examples in readme (#47)
+- [349aaa8](../../commit/349aaa8) Modified description of badge parameter (#46)
 
 
 
