@@ -1,7 +1,7 @@
 v0.10.0 - Sun, 25 Mar 2018 20:02:26 GMT
 ---------------------------------------
 
-
+- [8c6a8dc](../../commit/8c6a8dc) Remove rendered DOM on unmount (#73)
 
 
 
