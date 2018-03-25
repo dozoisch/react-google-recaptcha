@@ -3,11 +3,14 @@
   "version": "0.10.0",
   "description": "React Component Wrapper for Google reCAPTCHA",
   "main": "lib/recaptcha-wrapper.js",
+  "module": "lib/es/recaptcha-wrapper.js",
   "directories": {
     "lib": "lib/"
   },
   "scripts": {
-    "build": "rm -rf lib && babel src --out-dir lib",
+    "build": "rm -rf lib && npm run build:cjs && npm run build:es",
+    "build:cjs": "babel src --out-dir lib",
+    "build:es": "BABEL_ENV=es babel src --out-dir lib/es",
     "lint": "eslint ./",
     "lint:fix": "eslint ./ --fix",
     "test": "karma start --single-run",
