@@ -8,7 +8,6 @@
     "lib": "lib/"
   },
   "scripts": {
-    "postinstall": "npm run build",
     "build": "rm -rf lib && npm run build:cjs && npm run build:es",
     "build:cjs": "babel src --out-dir lib",
     "build:es": "BABEL_ENV=es babel src --out-dir lib/es",
