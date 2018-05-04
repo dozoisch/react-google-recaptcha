@@ -49,7 +49,7 @@ export default class ReCAPTCHA extends React.Component {
   }
 
   explicitRender(cb) {
-    if (this.props.grecaptcha && this.state.widgetId === undefined) {
+    if (this.props.grecaptcha && this.props.grecaptcha.render && this.state.widgetId === undefined) {
       const wrapper = document.createElement("div");
       const id = this.props.grecaptcha.render(wrapper, {
         sitekey: this.props.sitekey,
