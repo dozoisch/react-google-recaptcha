@@ -1,3 +1,10 @@
+v0.11.1 - Thu, 10 May 2018 22:28:19 GMT
+---------------------------------------
+
+- [b2ae438](../../commit/b2ae438) [fixed] issue grecaptcha.render is not a function by adding condition
+
+
+
 v0.11.0 - Sun, 25 Mar 2018 20:09:27 GMT
 ---------------------------------------
 
