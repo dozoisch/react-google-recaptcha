@@ -2,10 +2,11 @@ import ReCAPTCHA from "./recaptcha";
 import makeAsyncScriptLoader from "react-async-script";
 
 const callbackName = "onloadcallback";
-const lang = typeof window !== "undefined" && (window.recaptchaOptions && window.recaptchaOptions.lang) ?
-  `&hl=${window.recaptchaOptions.lang}` :
-	"";
-const URL = `https://www.google.com/recaptcha/api.js?onload=${callbackName}&render=explicit${lang}`;
+const options = (typeof window !== "undefined" && window.recaptchaOptions) || {};
+
+const lang = options.lang ? `&hl=${options.lang}` : "";
+const hostname = options.useRecaptchaNet ? "recaptcha.net" : "www.google.com";
+const URL = `https://${hostname}/recaptcha/api.js?onload=${callbackName}&render=explicit${lang}`;
 const globalName = "grecaptcha";
 
 export default makeAsyncScriptLoader(ReCAPTCHA, URL, {
