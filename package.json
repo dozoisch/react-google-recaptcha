@@ -37,8 +37,7 @@
   },
   "homepage": "https://github.com/dozoisch/react-google-recaptcha",
   "peerDependencies": {
-    "react": ">=15.5.0",
-    "react-async-script": ">=0.9.1"
+    "react": ">=15.5.0"
   },
   "devDependencies": {
     "babel-cli": "^6.0.0",
@@ -75,6 +74,7 @@
     "webpack": "~1.14.0"
   },
   "dependencies": {
-    "prop-types": ">=15.5.0"
+    "prop-types": ">=15.5.0",
+    "react-async-script": ">=0.9.1"
   }
 }
