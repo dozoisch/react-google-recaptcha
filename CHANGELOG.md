@@ -1,3 +1,11 @@
+v0.12.0 - Mon, 11 Jun 2018 16:39:53 GMT
+---------------------------------------
+
+- [f465421](../../commit/f465421) [fixed] react-async-script to dependency
+- [48a5726](../../commit/48a5726) [added] Parameter to use recaptchanet instead of google.com
+
+
+
 v0.11.1 - Thu, 10 May 2018 22:28:19 GMT
 ---------------------------------------
 
