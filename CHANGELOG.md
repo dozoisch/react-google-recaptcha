@@ -1,3 +1,10 @@
+v0.13.0 - Tue, 24 Jul 2018 21:50:35 GMT
+---------------------------------------
+
+- [fde0d51](../../commit/fde0d51) [fixed] Update async-script to get rid of Map polyfill
+
+
+
 v0.12.0 - Mon, 11 Jun 2018 16:39:53 GMT
 ---------------------------------------
 
