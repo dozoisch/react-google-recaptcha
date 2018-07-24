@@ -68,13 +68,12 @@
     "mt-changelog": "^0.6.2",
     "phantomjs": "^1.9.18",
     "react": "^15.5.0",
-    "react-async-script": "^0.9.1",
     "react-dom": "^15.5.0",
     "release-script": "^0.5.3",
     "webpack": "~1.14.0"
   },
   "dependencies": {
     "prop-types": ">=15.5.0",
-    "react-async-script": ">=0.9.1"
+    "react-async-script": ">=0.10.0"
   }
 }
