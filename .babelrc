@@ -6,14 +6,14 @@
         "react",
         [ "es2015", { "loose": true } ]
       ],
-      "plugins": [ "transform-runtime", "transform-object-rest-spread" ]
+      "plugins": [ "transform-object-rest-spread" ]
     },
     "es": {
       "presets": [
         "react",
         [ "es2015", { "loose": true, "modules": false } ]
       ],
-      "plugins": [ "transform-runtime", "transform-object-rest-spread" ],
+      "plugins": [ "transform-object-rest-spread" ],
     }
   }
 }
