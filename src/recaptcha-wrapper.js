@@ -21,5 +21,5 @@ export default makeAsyncScriptLoader(ReCAPTCHA, getURL, {
   callbackName,
   globalName,
   removeOnMount: initialOptions.removeOnMount || false,
-  exposeFuncs: ["getValue", "getWidgetId", "reset", "execute"]
+  exposeFuncs: ["getValue", "getWidgetId", "reset", "execute"],
 });
