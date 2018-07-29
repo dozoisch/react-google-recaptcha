@@ -1,3 +1,10 @@
+v0.14.0 - Sun, 29 Jul 2018 19:20:03 GMT
+---------------------------------------
+
+- [701695b](../../commit/701695b) [changed] dynamic url creation to allow language change
+
+
+
 v0.13.0 - Tue, 24 Jul 2018 21:50:35 GMT
 ---------------------------------------
 
