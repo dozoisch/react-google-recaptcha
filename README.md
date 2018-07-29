@@ -67,14 +67,17 @@ Other properties can be used to customise the rendering.
 | badge | enum | *optional* `bottomright`, `bottomleft` or `inline`. Positions reCAPTCHA badge. *Only for invisible reCAPTCHA* |
 
 
-In order to translate the reCaptcha widget, you should create a global variable configuring the desired language. If you don't provide it, reCaptcha will pick up the user's interface language.
+__lang__: In order to translate the reCaptcha widget, you should create a global variable configuring the desired language. If you don't provide it, reCaptcha will pick up the user's interface language.
 
-If google.com is blocked, you can set useRecaptchaNet to `true` so that the component uses recaptcha.net instead.
+__useRecaptchaNet__: If google.com is blocked, you can set useRecaptchaNet to `true` so that the component uses recaptcha.net instead.
+
+__removeOnMount__: If you plan to change the lang dynamically, removeOnMount should probably be true. This will allow you to unmount the reCAPTCHA component and remount it with a new language.
 
 ```js
 window.recaptchaOptions = {
   lang: 'fr',
   useRecaptchaNet: true,
+  removeOnMount: false,
 };
 ```
 
