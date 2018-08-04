@@ -86,6 +86,7 @@ window.recaptchaOptions = {
 The component also has some utility functions that can be called.
 
 - `getValue()` returns the value of the captcha field
+- `getWidgetId()` returns the recaptcha widget Id
 - `reset()` forces reset. See the [JavaScript API doc][js_api]
 
 ### Invisible reCAPTCHA
