@@ -87,6 +87,8 @@ The component also has some utility functions that can be called.
 
 - `getValue()` returns the value of the captcha field
 - `reset()` forces reset. See the [JavaScript API doc][js_api]
+- `execute()` programmatically invoke the challenge
+  - need to call when using `"invisible"` reCAPTCHA - [example below](#invisible-recaptcha)
 
 ### Invisible reCAPTCHA
 
