@@ -1,9 +1,6 @@
 # react-google-recaptcha
 
-[![Build Status][travis.img]][travis.url]
-[![npm version][npm.img]][npm.url]
-[![Dependencies][deps.img]][deps.url]
-[![Dev Dependencies][devdeps.img]][devdeps.url]
+[![Build Status][travis.img]][travis.url] [![npm version][npm.img]][npm.url] [![npm downloads][npm.dl.img]][npm.dl.url] [![Dependencies][deps.img]][deps.url]
 
 Component wrapper for [Google reCAPTCHA v2][reCAPTCHA]
 
@@ -11,18 +8,6 @@ Component wrapper for [Google reCAPTCHA v2][reCAPTCHA]
 
 ```shell
 npm install --save react-google-recaptcha
-```
-
-### React < 15.5
-With version prior to 15.5
-```shell
-npm install --save react-google-recaptcha@0.8.1
-```
-
-### React 0.13
-With 0.13, install version 0.4.1
-```shell
-npm install --save react-google-recaptcha@0.4.1
 ```
 
 ## Usage
@@ -150,14 +135,28 @@ render(
 );
 ```
 
+## Notes
+
+### React < 15.5
+With version prior to 15.5
+```shell
+npm install --save react-google-recaptcha@0.8.1
+```
+
+### React 0.13
+With 0.13, install version 0.4.1
+```shell
+npm install --save react-google-recaptcha@0.4.1
+```
+
 [travis.img]: https://travis-ci.org/dozoisch/react-google-recaptcha.svg?branch=master
 [travis.url]: https://travis-ci.org/dozoisch/react-google-recaptcha
 [npm.img]: https://badge.fury.io/js/react-google-recaptcha.svg
 [npm.url]: http://badge.fury.io/js/react-google-recaptcha
+[npm.dl.img]: https://img.shields.io/npm/dm/react-google-recaptcha.svg
+[npm.dl.url]: https://www.npmjs.com/package/react-google-recaptcha
 [deps.img]: https://david-dm.org/dozoisch/react-google-recaptcha.svg
 [deps.url]: https://david-dm.org/dozoisch/react-google-recaptcha
-[devdeps.img]: https://david-dm.org/dozoisch/react-google-recaptcha/dev-status.svg
-[devdeps.url]: https://david-dm.org/dozoisch/react-google-recaptcha#info=devDependencies
 
 [reCAPTCHA]: https://www.google.com/recaptcha
 [signup]: http://www.google.com/recaptcha/admin
