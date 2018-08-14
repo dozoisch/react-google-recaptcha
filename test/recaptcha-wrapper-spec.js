@@ -1,6 +1,6 @@
 import React from "react";
 import ReactTestUtils from "react-dom/test-utils";
-import ReCAPTCHA from "../src/recaptcha-wrapper"; // eslint-disable-line no-unused-vars
+import ReCAPTCHA from "../src/recaptcha-wrapper";
 
 const VALUE = "some value";
 const WIDGET_ID = "someWidgetId";
@@ -21,17 +21,17 @@ describe("ReCAPTCHAWrapper", () => {
   beforeEach(() => {
     window.grecaptcha = grecaptchaMock;
   });
+  afterEach(() => {
+    delete window.grecaptcha;
+  });
   it("should be wrapped properly", () => {
     assert.equal(ReCAPTCHA.displayName, "AsyncScriptLoader(ReCAPTCHA)");
   });
   it("should proxy functions", () => {
-    const instance = ReactTestUtils.renderIntoDocument(
-      <ReCAPTCHA sitekey="xxx" />,
+    const ReCaptchaRef = React.createRef();
+    ReactTestUtils.renderIntoDocument(
+      <ReCAPTCHA sitekey="xxx" ref={ReCaptchaRef} />,
     );
-    assert.ok(instance);
-    assert.equal(instance.getValue(), VALUE);
-  });
-  afterEach(() => {
-    delete window.grecaptcha;
+    assert.equal(ReCaptchaRef.current.getValue(), VALUE);
   });
 });

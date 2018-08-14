@@ -4,39 +4,37 @@ import PropTypes from "prop-types";
 export default class ReCAPTCHA extends React.Component {
   constructor() {
     super();
-    this.state = {};
     this.handleExpired = this.handleExpired.bind(this);
     this.handleRecaptchaRef = this.handleRecaptchaRef.bind(this);
   }
 
   getValue() {
-    if (this.props.grecaptcha && this.state.widgetId !== undefined) {
-      return this.props.grecaptcha.getResponse(this.state.widgetId);
+    if (this.props.grecaptcha && this._widgetId !== undefined) {
+      return this.props.grecaptcha.getResponse(this._widgetId);
     }
     return null;
   }
 
   getWidgetId() {
-    if (this.props.grecaptcha && this.state.widgetId !== undefined) {
-      return this.state.widgetId;
+    if (this.props.grecaptcha && this._widgetId !== undefined) {
+      return this._widgetId;
     }
     return null;
   }
 
   execute() {
     const { grecaptcha } = this.props;
-    const { widgetId } = this.state;
 
-    if (grecaptcha && widgetId !== undefined) {
-      return grecaptcha.execute(widgetId);
+    if (grecaptcha && this._widgetId !== undefined) {
+      return grecaptcha.execute(this._widgetId);
     } else {
       this._executeRequested = true;
     }
   }
 
   reset() {
-    if (this.props.grecaptcha && this.state.widgetId !== undefined) {
-      this.props.grecaptcha.reset(this.state.widgetId);
+    if (this.props.grecaptcha && this._widgetId !== undefined) {
+      this.props.grecaptcha.reset(this._widgetId);
     }
   }
 
@@ -48,10 +46,10 @@ export default class ReCAPTCHA extends React.Component {
     }
   }
 
-  explicitRender(cb) {
-    if (this.props.grecaptcha && this.props.grecaptcha.render && this.state.widgetId === undefined) {
+  explicitRender() {
+    if (this.props.grecaptcha && this.props.grecaptcha.render && this._widgetId === undefined) {
       const wrapper = document.createElement("div");
-      const id = this.props.grecaptcha.render(wrapper, {
+      this._widgetId = this.props.grecaptcha.render(wrapper, {
         sitekey: this.props.sitekey,
         callback: this.props.onChange,
         theme: this.props.theme,
@@ -63,12 +61,8 @@ export default class ReCAPTCHA extends React.Component {
         badge: this.props.badge,
       });
       this.captcha.appendChild(wrapper);
-
-      this.setState({
-        widgetId: id,
-      }, cb);
     }
-    if (this._executeRequested && this.props.grecaptcha && this.state.widgetId !== undefined) {
+    if (this._executeRequested && this.props.grecaptcha && this._widgetId !== undefined) {
       this._executeRequested = false;
       this.execute();
     }
@@ -83,7 +77,7 @@ export default class ReCAPTCHA extends React.Component {
   }
 
   componentWillUnmount() {
-    if (this.state.widgetId !== undefined) {
+    if (this._widgetId !== undefined) {
       while (this.captcha.firstChild) {
         this.captcha.removeChild(this.captcha.firstChild);
       }

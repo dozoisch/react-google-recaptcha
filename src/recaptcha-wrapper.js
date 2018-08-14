@@ -17,9 +17,8 @@ const callbackName = "onloadcallback";
 const globalName = "grecaptcha";
 const initialOptions = getOptions();
 
-export default makeAsyncScriptLoader(ReCAPTCHA, getURL, {
+export default makeAsyncScriptLoader(getURL, {
   callbackName,
   globalName,
   removeOnMount: initialOptions.removeOnMount || false,
-  exposeFuncs: ["getValue", "getWidgetId", "reset", "execute"],
-});
+})(ReCAPTCHA);

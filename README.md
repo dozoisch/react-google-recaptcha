@@ -17,15 +17,13 @@ All you need to do is [sign up for an API key pair][signup]. You will need the c
 You can then use the reCAPTCHA. The default require imports a wrapped component that loads the reCAPTCHA script asynchronously.
 
 ```jsx
-var React = require("react").default;
-var render = require("react-dom").render
-var ReCAPTCHA = require("react-google-recaptcha");
+import ReCAPTCHA from "react-google-recaptcha";
 
 function onChange(value) {
   console.log("Captcha value:", value);
 }
 
-render(
+ReactDOM.render(
   <ReCAPTCHA
     ref="recaptcha"
     sitekey="Your client site key"
@@ -68,7 +66,7 @@ window.recaptchaOptions = {
 
 ## Component API
 
-The component also has some utility functions that can be called.
+The component instance also has some utility functions that can be called. These can be accessed via `ref`.
 
 - `getValue()` returns the value of the captcha field
 - `getWidgetId()` returns the recaptcha widget Id
@@ -85,23 +83,16 @@ Starting with 0.7.0, the component now supports invisible options. See the [reCA
 With the invisible option, you need to handle things a bit differently. You will need to call the `execute` method yourself.
 
 ```jsx
-var React = require("react").default;
-var render = require("react-dom").render
-var ReCAPTCHA = require("react-google-recaptcha");
-
-function onChange(value) {
-  console.log("Captcha value:", value);
-}
+import ReCAPTCHA from "react-google-recaptcha";
 
 let captcha;
 
-render(
+ReactDOM.render(
   <form onSubmit={() => { captcha.execute(); }}>
     <ReCAPTCHA
       ref={(el) => { captcha = el; }}
       size="invisible"
       sitekey="Your client site key"
-      onChange={onChange}
     />
   </form>,
   document.body
@@ -114,21 +105,14 @@ render(
 You can also use the barebone components doing the following. Using that component will oblige you to manage the grecaptcha dep and load the script by yourself.
 
 ```jsx
-var React = require("react").default;
-var render = require("react-dom").render
-var ReCAPTCHA = require("react-google-recaptcha/lib/recaptcha");
+import { ReCAPTCHA } from "react-google-recaptcha";
 
-var grecaptchaObject = grecaptcha // You must provide access to the google grecaptcha object.
-
-function onChange(value) {
-  console.log("Captcha value:", value);
-}
+const grecaptchaObject = window.grecaptcha // You must provide access to the google grecaptcha object.
 
 render(
   <ReCAPTCHA
-    ref="recaptcha"
+    ref={(r) => this.recaptcha = r}
     sitekey="Your client site key"
-    onChange={onChange}
     grecaptcha={grecaptchaObject}
   />,
   document.body
@@ -137,17 +121,7 @@ render(
 
 ## Notes
 
-### React < 15.5
-With version prior to 15.5
-```shell
-npm install --save react-google-recaptcha@0.8.1
-```
-
-### React 0.13
-With 0.13, install version 0.4.1
-```shell
-npm install --save react-google-recaptcha@0.4.1
-```
+Pre `1.0.0` and `React < 15.5.*` support details in [0.14.0](https://github.com/dozoisch/react-google-recaptcha/tree/v0.14.0).
 
 [travis.img]: https://travis-ci.org/dozoisch/react-google-recaptcha.svg?branch=master
 [travis.url]: https://travis-ci.org/dozoisch/react-google-recaptcha

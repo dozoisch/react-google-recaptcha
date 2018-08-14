@@ -37,35 +37,46 @@ describe("ReCAPTCHA", () => {
   });
   it("reset, should call grecaptcha.reset with the widget id", (done) => {
     const grecaptchaMock = {
-      render () {
-        return "someWidgetId";
-      },
-
+      render () { return "someWidgetId"; },
       reset (widgetId) {
         assert.isNotNull(widgetId);
         done();
       },
     };
-    const instance = ReactTestUtils.renderIntoDocument(
-      <ReCAPTCHA sitekey="xxx" grecaptcha={grecaptchaMock} />,
-		);
-    instance.reset();
+    const ReCaptchaRef = React.createRef();
+    ReactTestUtils.renderIntoDocument(
+      (<ReCAPTCHA sitekey="xxx" grecaptcha={grecaptchaMock} ref={ReCaptchaRef} />)
+    );
+    ReCaptchaRef.current.reset();
   });
   it("execute, should call grecaptcha.execute with the widget id", (done) => {
     const grecaptchaMock = {
-      render () {
-        return "someWidgetId";
-      },
-
+      render () { return "someWidgetId"; },
       execute (widgetId) {
         assert.isNotNull(widgetId);
         done();
       },
     };
+    // wrapping component example that applies a ref to ReCAPTCHA
+    class WrappingComponent extends React.Component {
+      constructor(props) {
+        super(props);
+        this._internalRef = React.createRef();
+      }
+      render() { return (
+        <div>
+          <ReCAPTCHA
+            sitekey="xxx"
+            size="invisible"
+            grecaptcha={grecaptchaMock}
+            ref={this._internalRef} />
+        </div>);
+      }
+    }
     const instance = ReactTestUtils.renderIntoDocument(
-      <ReCAPTCHA sitekey="xxx" size="invisible" grecaptcha={grecaptchaMock} />,
-		);
-    instance.execute();
+      (<WrappingComponent />)
+    );
+    instance._internalRef.current.execute();
   });
   describe("Expired", () => {
     it("should call onChange with null when response is expired");
