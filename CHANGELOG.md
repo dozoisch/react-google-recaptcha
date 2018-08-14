@@ -1,4 +1,4 @@
-v1.0.0-rc.1 - Pending
+v1.0.0-rc.2 - Pending
 ---------------------------------------
 
 - Update to react-async-script 1.0 [(#94)](https://github.com/dozoisch/react-google-recaptcha/pull/94)
