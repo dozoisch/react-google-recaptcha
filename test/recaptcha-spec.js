@@ -74,7 +74,7 @@ describe("ReCAPTCHA", () => {
       }
     }
     const instance = ReactTestUtils.renderIntoDocument(
-      (<WrappingComponent />)
+      React.createElement(WrappingComponent)
     );
     instance._internalRef.current.execute();
   });

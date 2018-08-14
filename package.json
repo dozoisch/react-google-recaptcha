@@ -50,6 +50,7 @@
     "babel-runtime": "^6.0.0",
     "chai": "^3.5.0",
     "es5-shim": "^4.5.0",
+    "es6-shim": "^0.35.3",
     "eslint": "^3.17.1",
     "eslint-config-defaults": "^9.0.0",
     "eslint-plugin-react": "^6.10.0",

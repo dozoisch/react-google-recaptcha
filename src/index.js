@@ -1,4 +1,4 @@
-import RecaptchaWrapper from './recaptcha-wrapper';
+import RecaptchaWrapper from "./recaptcha-wrapper";
 import ReCAPTCHA from "./recaptcha";
 
 export default RecaptchaWrapper;
