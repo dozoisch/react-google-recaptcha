@@ -1,3 +1,11 @@
+v1.0.0-rc.1 - Pending
+---------------------------------------
+
+- Update to react-async-script 1.0 [(#94)](https://github.com/dozoisch/react-google-recaptcha/pull/94)
+
+
+
+
 v0.14.0 - Sun, 29 Jul 2018 19:20:03 GMT
 ---------------------------------------
 
