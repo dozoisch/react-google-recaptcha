@@ -11,13 +11,11 @@
     "build": "rm -rf lib && npm run build:cjs && npm run build:es",
     "build:cjs": "babel src --out-dir lib",
     "build:es": "BABEL_ENV=es babel src --out-dir lib/es",
+    "prepublish": "npm run build",
     "lint": "eslint ./",
     "lint:fix": "eslint ./ --fix",
     "test": "karma start --single-run",
-    "test-watch": "karma start",
-    "patch": "release patch --run",
-    "minor": "release minor --run",
-    "major": "release major --run"
+    "test-watch": "karma start"
   },
   "repository": {
     "type": "git",
@@ -65,11 +63,9 @@
     "karma-sourcemap-loader": "~0.3.5",
     "karma-webpack": "~1.7.0",
     "mocha": "~2.3.3",
-    "mt-changelog": "^0.6.2",
     "phantomjs": "^1.9.18",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "release-script": "^0.5.3",
     "webpack": "~1.14.0"
   },
   "dependencies": {
