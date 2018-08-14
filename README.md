@@ -119,9 +119,12 @@ render(
 );
 ```
 
+## Notes on Requirements
+At least `React@16.4.1` is required due to `forwardRef` usage in [react-async-script](https://github.com/dozoisch/react-async-script).
+
 ## Notes
 
-Pre `1.0.0` and `React < 15.5.*` support details in [0.14.0](https://github.com/dozoisch/react-google-recaptcha/tree/v0.14.0).
+Pre `1.0.0` and `React < 16.4.1` support details in [0.14.0](https://github.com/dozoisch/react-google-recaptcha/tree/v0.14.0).
 
 [travis.img]: https://travis-ci.org/dozoisch/react-google-recaptcha.svg?branch=master
 [travis.url]: https://travis-ci.org/dozoisch/react-google-recaptcha
