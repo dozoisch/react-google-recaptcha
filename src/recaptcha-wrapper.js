@@ -18,5 +18,5 @@ const initialOptions = getOptions();
 export default makeAsyncScriptLoader(getURL, {
   callbackName,
   globalName,
-  removeOnMount: initialOptions.removeOnMount || false,
+  removeOnUnmount: initialOptions.removeOnUnmount || false,
 })(ReCAPTCHA);

@@ -55,13 +55,13 @@ __lang__: In order to translate the reCaptcha widget, you should create a global
 
 __useRecaptchaNet__: If google.com is blocked, you can set useRecaptchaNet to `true` so that the component uses recaptcha.net instead.
 
-__removeOnMount__: If you plan to change the lang dynamically, removeOnMount should probably be true. This will allow you to unmount the reCAPTCHA component and remount it with a new language.
+__removeOnUnmount__: If you plan to change the lang dynamically, removeOnUnmount should probably be true. This will allow you to unmount the reCAPTCHA component and remount it with a new language.
 
 ```js
 window.recaptchaOptions = {
   lang: 'fr',
   useRecaptchaNet: true,
-  removeOnMount: false,
+  removeOnUnmount: false,
 };
 ```
 
