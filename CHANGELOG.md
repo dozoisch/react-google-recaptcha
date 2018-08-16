@@ -1,7 +1,12 @@
-v1.0.0-rc.2 - Pending
+v1.0.0-rc.3 - Pending
 ---------------------------------------
 
 - Update to react-async-script 1.0 [(#94)](https://github.com/dozoisch/react-google-recaptcha/pull/94)
+- Add on Error [(#93)](https://github.com/dozoisch/react-google-recaptcha/pull/93)
+- Update build tools
+  - Node 8 [(#95)](https://github.com/dozoisch/react-google-recaptcha/pull/95)
+  - Jest [(#95)](https://github.com/dozoisch/react-google-recaptcha/pull/95)
+  - Eslint/Prettier [(#96)](https://github.com/dozoisch/react-google-recaptcha/pull/96)
 
 
 
