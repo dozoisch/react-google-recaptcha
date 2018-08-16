@@ -11,7 +11,7 @@
     "build": "rm -rf lib && npm run build:cjs && npm run build:es",
     "build:cjs": "babel src --out-dir lib",
     "build:es": "BABEL_ENV=es babel src --out-dir lib/es",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "pretty": "prettier --write src/*.js ./*.js test/*.js",
     "lint": "eslint ./",
     "lint:fix": "eslint ./ --fix",
