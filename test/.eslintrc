@@ -1,11 +1,12 @@
 {
   "env": {
-    "mocha": true
+    "mocha": true,
+    "node": true
   },
   "globals": {
     "expect": true,
     "Promise": true,
-    "jest": true,
+    "jest": true
   },
   "rules": {
     "no-script-url": 1,

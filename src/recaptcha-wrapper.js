@@ -7,9 +7,7 @@ function getOptions() {
 function getURL() {
   const dynamicOptions = getOptions();
   const lang = dynamicOptions.lang ? `&hl=${dynamicOptions.lang}` : "";
-  const hostname = dynamicOptions.useRecaptchaNet
-    ? "recaptcha.net"
-    : "www.google.com";
+  const hostname = dynamicOptions.useRecaptchaNet ? "recaptcha.net" : "www.google.com";
   return `https://${hostname}/recaptcha/api.js?onload=${callbackName}&render=explicit${lang}`;
 }
 

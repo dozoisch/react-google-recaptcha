@@ -6,13 +6,13 @@ const VALUE = "some value";
 const WIDGET_ID = "someWidgetId";
 
 const grecaptchaMock = {
-  render (node, options) {
+  render(node, options) {
     expect(node).toBeTruthy();
     expect(options).toBeTruthy();
     return WIDGET_ID;
   },
 
-  getResponse (widgetId) {
+  getResponse(widgetId) {
     expect(widgetId).toBe(WIDGET_ID);
     return VALUE;
   },
