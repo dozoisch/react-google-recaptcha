@@ -7,7 +7,7 @@ describe("ReCAPTCHA", () => {
   it("Rendered Component should be a div", () => {
     const instance = ReactTestUtils.renderIntoDocument(
       <ReCAPTCHA sitekey="xxx" onChange={jest.fn()} />,
-		);
+    );
     expect(ReactDOM.findDOMNode(instance).nodeName).toBe("DIV");
   });
   it("Rendered Component should contained passed props", () => {
@@ -16,17 +16,15 @@ describe("ReCAPTCHA", () => {
       id: "superdefinedId",
       onChange: jest.fn(),
     };
-    const instance = ReactTestUtils.renderIntoDocument(
-      <ReCAPTCHA sitekey="xxx" {...props} />,
-    );
+    const instance = ReactTestUtils.renderIntoDocument(<ReCAPTCHA sitekey="xxx" {...props} />);
     expect(ReactDOM.findDOMNode(instance).id).toBe(props.id);
     expect(ReactDOM.findDOMNode(instance).className).toBe(props.className);
   });
 
   it("should call grecaptcha.render, when it is already loaded", () => {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       const grecaptchaMock = {
-        render (node, options) {
+        render(node, options) {
           expect(node).toBeTruthy();
           expect(options.sitekey).toBe("xxx");
           resolve();
@@ -39,28 +37,37 @@ describe("ReCAPTCHA", () => {
     });
   });
   it("reset, should call grecaptcha.reset with the widget id", () => {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       const WIDGET_ID = "someWidgetId";
       const grecaptchaMock = {
-        render () { return WIDGET_ID; },
-        reset (widgetId) {
+        render() {
+          return WIDGET_ID;
+        },
+        reset(widgetId) {
           expect(widgetId).toBe(WIDGET_ID);
           resolve();
         },
       };
       const ReCaptchaRef = React.createRef();
       ReactTestUtils.renderIntoDocument(
-        (<ReCAPTCHA sitekey="xxx" grecaptcha={grecaptchaMock} ref={ReCaptchaRef} onChange={jest.fn()} />)
+        <ReCAPTCHA
+          sitekey="xxx"
+          grecaptcha={grecaptchaMock}
+          ref={ReCaptchaRef}
+          onChange={jest.fn()}
+        />,
       );
       ReCaptchaRef.current.reset();
     });
   });
   it("execute, should call grecaptcha.execute with the widget id", () => {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       const WIDGET_ID = "someWidgetId";
       const grecaptchaMock = {
-        render () { return WIDGET_ID; },
-        execute (widgetId) {
+        render() {
+          return WIDGET_ID;
+        },
+        execute(widgetId) {
           expect(widgetId).toBe(WIDGET_ID);
           resolve();
         },
@@ -71,20 +78,21 @@ describe("ReCAPTCHA", () => {
           super(props);
           this._internalRef = React.createRef();
         }
-        render() { return (
-          <div>
-            <ReCAPTCHA
-              sitekey="xxx"
-              size="invisible"
-              grecaptcha={grecaptchaMock}
-              onChange={jest.fn()}
-              ref={this._internalRef} />
-          </div>);
+        render() {
+          return (
+            <div>
+              <ReCAPTCHA
+                sitekey="xxx"
+                size="invisible"
+                grecaptcha={grecaptchaMock}
+                onChange={jest.fn()}
+                ref={this._internalRef}
+              />
+            </div>
+          );
         }
       }
-      const instance = ReactTestUtils.renderIntoDocument(
-        React.createElement(WrappingComponent)
-      );
+      const instance = ReactTestUtils.renderIntoDocument(React.createElement(WrappingComponent));
       instance._internalRef.current.execute();
     });
   });

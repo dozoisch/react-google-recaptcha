@@ -92,11 +92,21 @@ export default class ReCAPTCHA extends React.Component {
   render() {
     // consume properties owned by the reCATPCHA, pass the rest to the div so the user can style it.
     /* eslint-disable no-unused-vars */
-    const { sitekey, onChange, theme, type, tabindex, onExpired, size, stoken, grecaptcha, badge, ...childProps } = this.props;
+    const {
+      sitekey,
+      onChange,
+      theme,
+      type,
+      tabindex,
+      onExpired,
+      size,
+      stoken,
+      grecaptcha,
+      badge,
+      ...childProps
+    } = this.props;
     /* eslint-enable no-unused-vars */
-    return (
-      <div {...childProps} ref={this.handleRecaptchaRef} />
-    );
+    return <div {...childProps} ref={this.handleRecaptchaRef} />;
   }
 }
 
