@@ -45,6 +45,9 @@ export default class ReCAPTCHA extends React.Component {
       this.props.onChange(null);
     }
   }
+  handleErrored() {
+    if (this.props.onErrored) this.props.onErrored();
+  }
 
   explicitRender() {
     if (this.props.grecaptcha && this.props.grecaptcha.render && this._widgetId === undefined) {
@@ -56,6 +59,7 @@ export default class ReCAPTCHA extends React.Component {
         type: this.props.type,
         tabindex: this.props.tabindex,
         "expired-callback": this.handleExpired,
+        "error-callback": this.handleErrored,
         size: this.props.size,
         stoken: this.props.stoken,
         badge: this.props.badge,
@@ -99,6 +103,7 @@ export default class ReCAPTCHA extends React.Component {
       type,
       tabindex,
       onExpired,
+      onErrored,
       size,
       stoken,
       grecaptcha,
@@ -119,6 +124,7 @@ ReCAPTCHA.propTypes = {
   type: PropTypes.oneOf(["image", "audio"]),
   tabindex: PropTypes.number,
   onExpired: PropTypes.func,
+  onErrored: PropTypes.func,
   size: PropTypes.oneOf(["compact", "normal", "invisible"]),
   stoken: PropTypes.string,
   badge: PropTypes.oneOf(["bottomright", "bottomleft", "inline"]),
