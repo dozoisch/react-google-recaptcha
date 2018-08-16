@@ -100,4 +100,7 @@ describe("ReCAPTCHA", () => {
     it("should call onChange with null when response is expired");
     it("should call onExpired when response is expired");
   });
+  describe.skip("Errored", () => {
+    it("should call onErrored when grecaptcha errored");
+  });
 });
