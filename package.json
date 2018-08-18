@@ -1,9 +1,9 @@
 {
   "name": "react-google-recaptcha",
-  "version": "0.14.0",
+  "version": "1.0.0",
   "description": "React Component Wrapper for Google reCAPTCHA",
-  "main": "lib/recaptcha-wrapper.js",
-  "module": "lib/es/recaptcha-wrapper.js",
+  "main": "lib/index.js",
+  "module": "lib/es/index.js",
   "directories": {
     "lib": "lib/"
   },
@@ -11,13 +11,11 @@
     "build": "rm -rf lib && npm run build:cjs && npm run build:es",
     "build:cjs": "babel src --out-dir lib",
     "build:es": "BABEL_ENV=es babel src --out-dir lib/es",
+    "prepare": "npm run build",
+    "pretty": "prettier --write src/*.js ./*.js test/*.js",
     "lint": "eslint ./",
     "lint:fix": "eslint ./ --fix",
-    "test": "karma start --single-run",
-    "test-watch": "karma start",
-    "patch": "release patch --run",
-    "minor": "release minor --run",
-    "major": "release major --run"
+    "test": "BABEL_ENV=development jest"
   },
   "repository": {
     "type": "git",
@@ -37,12 +35,13 @@
   },
   "homepage": "https://github.com/dozoisch/react-google-recaptcha",
   "peerDependencies": {
-    "react": ">=15.5.0"
+    "react": ">=16.4.1"
   },
   "devDependencies": {
     "babel-cli": "^6.0.0",
     "babel-core": "^6.0.0",
     "babel-eslint": "^7.0.0",
+    "babel-jest": "^23.4.2",
     "babel-loader": "^6.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -50,30 +49,16 @@
     "babel-preset-react": "^6.23.0",
     "babel-register": "^6.23.0",
     "babel-runtime": "^6.0.0",
-    "chai": "^3.5.0",
-    "es5-shim": "^4.5.0",
-    "eslint": "^3.17.1",
-    "eslint-config-defaults": "^9.0.0",
-    "eslint-plugin-react": "^6.10.0",
-    "karma": "~0.13.9",
-    "karma-chai": "~0.1.0",
-    "karma-chrome-launcher": "~0.2.0",
-    "karma-cli": "~0.1.0",
-    "karma-mocha": "~0.2.0",
-    "karma-mocha-reporter": "~1.1.1",
-    "karma-phantomjs-launcher": "^0.2.1",
-    "karma-sourcemap-loader": "~0.3.5",
-    "karma-webpack": "~1.7.0",
-    "mocha": "~2.3.3",
-    "mt-changelog": "^0.6.2",
-    "phantomjs": "^1.9.18",
-    "react": "^15.5.0",
-    "react-dom": "^15.5.0",
-    "release-script": "^0.5.3",
-    "webpack": "~1.14.0"
+    "eslint": "^5.3.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "jest": "^23.5.0",
+    "prettier": "1.14.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
   },
   "dependencies": {
-    "prop-types": ">=15.5.0",
-    "react-async-script": ">=0.11.0"
+    "prop-types": "^15.5.0",
+    "react-async-script": "^1.0.0"
   }
 }

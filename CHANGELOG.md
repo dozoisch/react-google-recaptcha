@@ -1,3 +1,15 @@
+v1.0.0 - Fri, 17 Aug 2018 18:11:00 PST
+---------------------------------------
+
+- Update to react-async-script 1.0 [(#94)](https://github.com/dozoisch/react-google-recaptcha/pull/94)
+- Add on Error [(#97)](https://github.com/dozoisch/react-google-recaptcha/pull/97)
+- Update build tools
+  - Node 8 [(#95)](https://github.com/dozoisch/react-google-recaptcha/pull/95)
+  - Jest [(#95)](https://github.com/dozoisch/react-google-recaptcha/pull/95)
+  - Eslint/Prettier [(#96)](https://github.com/dozoisch/react-google-recaptcha/pull/96)
+
+
+
 v0.14.0 - Sun, 29 Jul 2018 19:20:03 GMT
 ---------------------------------------
 
