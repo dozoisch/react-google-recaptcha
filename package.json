@@ -1,6 +1,6 @@
 {
   "name": "react-google-recaptcha",
-  "version": "1.0.0-rc.3",
+  "version": "1.0.0",
   "description": "React Component Wrapper for Google reCAPTCHA",
   "main": "lib/index.js",
   "module": "lib/es/index.js",
@@ -59,6 +59,6 @@
   },
   "dependencies": {
     "prop-types": "^15.5.0",
-    "react-async-script": "1.0.0-rc.1"
+    "react-async-script": "^1.0.0"
   }
 }
