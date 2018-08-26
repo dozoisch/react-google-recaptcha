@@ -118,7 +118,7 @@ export default class ReCAPTCHA extends React.Component {
 ReCAPTCHA.displayName = "ReCAPTCHA";
 ReCAPTCHA.propTypes = {
   sitekey: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
   grecaptcha: PropTypes.object,
   theme: PropTypes.oneOf(["dark", "light"]),
   type: PropTypes.oneOf(["image", "audio"]),
@@ -130,6 +130,7 @@ ReCAPTCHA.propTypes = {
   badge: PropTypes.oneOf(["bottomright", "bottomleft", "inline"]),
 };
 ReCAPTCHA.defaultProps = {
+  onChange: () => {},
   theme: "light",
   type: "image",
   tabindex: 0,
