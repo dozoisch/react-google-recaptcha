@@ -1,3 +1,10 @@
+v1.0.1 - Thu, 30 Aug 2018 12:54:00 EST
+---------------------------------------
+
+- Make the onChange prop not required [(#102)](https://github.com/dozoisch/react-google-recaptcha/pull/102)
+
+
+
 v1.0.0 - Fri, 17 Aug 2018 18:11:00 PST
 ---------------------------------------
 
