@@ -1,3 +1,10 @@
+v1.0.2 - Wed, 5 Sep 2018 13:21:00 EST
+---------------------------------------
+
+- fixe unbound onErrored handler [(#104)](https://github.com/dozoisch/react-google-recaptcha/pull/104)
+
+
+
 v1.0.1 - Thu, 30 Aug 2018 12:54:00 EST
 ---------------------------------------
 
