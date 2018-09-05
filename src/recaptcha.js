@@ -5,6 +5,7 @@ export default class ReCAPTCHA extends React.Component {
   constructor() {
     super();
     this.handleExpired = this.handleExpired.bind(this);
+    this.handleErrored = this.handleErrored.bind(this);
     this.handleRecaptchaRef = this.handleRecaptchaRef.bind(this);
   }
 
@@ -45,6 +46,7 @@ export default class ReCAPTCHA extends React.Component {
       this.props.onChange(null);
     }
   }
+
   handleErrored() {
     if (this.props.onErrored) this.props.onErrored();
   }
