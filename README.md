@@ -67,7 +67,7 @@ Example:
 const recaptchaRef = React.createRef();
 ...
 onSubmit = () ={
-  const recaptchaValue = recaptchaRef.getValue();
+  const recaptchaValue = recaptchaRef.current.getValue();
   this.props.onSubmit(recaptchaValue);
 }
 render() {
@@ -97,7 +97,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 const recaptchaRef = React.createRef();
 
 ReactDOM.render(
-  <form onSubmit={() => { captcha.execute(); }}>
+  <form onSubmit={() => { recaptchaRef.current.execute(); }}>
     <ReCAPTCHA
       ref={recaptchaRef}
       size="invisible"
