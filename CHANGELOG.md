@@ -1,4 +1,4 @@
-v1.0.3 - Thu 27 Sep 2018 15:14 PST
+v1.0.4 - Thu 27 Sep 2018 15:14 PST
 ---------------------------------------
 
 - add .babelrc to .npmignore  [(#111)](https://github.com/dozoisch/react-google-recaptcha/issues/111)
