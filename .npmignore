@@ -4,3 +4,4 @@ tools/
 .gitignore
 .travis.yml
 karma.conf.js
+.babelrc
