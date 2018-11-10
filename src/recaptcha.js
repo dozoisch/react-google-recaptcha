@@ -90,9 +90,9 @@ export default class ReCAPTCHA extends React.Component {
   }
 
   delayOfCaptchaIframeRemoving() {
-    const temporaryNode = document.createElement('div');
+    const temporaryNode = document.createElement("div");
     document.body.appendChild(temporaryNode);
-    temporaryNode.style.display = 'none';
+    temporaryNode.style.display = "none";
 
     // move of the recaptcha to a temporary node
     while (this.captcha.firstChild) {
