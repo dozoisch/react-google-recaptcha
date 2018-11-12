@@ -84,11 +84,25 @@ export default class ReCAPTCHA extends React.Component {
 
   componentWillUnmount() {
     if (this._widgetId !== undefined) {
-      while (this.captcha.firstChild) {
-        this.captcha.removeChild(this.captcha.firstChild);
-      }
+      this.delayOfCaptchaIframeRemoving();
       this.reset();
     }
+  }
+
+  delayOfCaptchaIframeRemoving() {
+    const temporaryNode = document.createElement("div");
+    document.body.appendChild(temporaryNode);
+    temporaryNode.style.display = "none";
+
+    // move of the recaptcha to a temporary node
+    while (this.captcha.firstChild) {
+      temporaryNode.appendChild(this.captcha.firstChild);
+    }
+
+    // delete the temporary node after reset will be done
+    setTimeout(() => {
+      document.body.removeChild(temporaryNode);
+    }, 5000);
   }
 
   handleRecaptchaRef(elem) {
