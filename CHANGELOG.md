@@ -1,7 +1,14 @@
+v1.0.5 - Mon 12 Nov 2018 9:25 PST
+---------------------------------------
+
+- Fix promise timeout [(#120)](https://github.com/dozoisch/react-google-recaptcha/issues/12-)
+
+
+
 v1.0.4 - Thu 27 Sep 2018 15:14 PST
 ---------------------------------------
 
-- add .babelrc to .npmignore  [(#111)](https://github.com/dozoisch/react-google-recaptcha/issues/111)
+- add .babelrc to .npmignore [(#111)](https://github.com/dozoisch/react-google-recaptcha/issues/111)
 
 
 
