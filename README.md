@@ -163,7 +163,7 @@ Pre `1.0.0` and `React < 16.4.1` support details in [0.14.0](https://github.com/
 [deps.img]: https://david-dm.org/dozoisch/react-google-recaptcha.svg
 [deps.url]: https://david-dm.org/dozoisch/react-google-recaptcha
 
-[reCAPTCHA]: https://www.google.com/recaptcha
+[reCAPTCHA]: https://developers.google.com/recaptcha/docs/display
 [signup]: http://www.google.com/recaptcha/admin
 [docs]: https://developers.google.com/recaptcha
 [docs_theme]: https://developers.google.com/recaptcha/docs/faq#can-i-customize-the-recaptcha-widget
