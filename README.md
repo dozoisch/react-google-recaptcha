@@ -66,7 +66,7 @@ Example:
 ```javascript
 const recaptchaRef = React.createRef();
 ...
-onSubmit = () ={
+onSubmit = () => {
   const recaptchaValue = recaptchaRef.current.getValue();
   this.props.onSubmit(recaptchaValue);
 }
