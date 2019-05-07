@@ -2,6 +2,8 @@
 
 [![Build Status][travis.img]][travis.url] [![npm version][npm.img]][npm.url] [![npm downloads][npm.dl.img]][npm.dl.url] [![Dependencies][deps.img]][deps.url]
 
+[![Edit react-google-recaptcha example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/1y4zzjq37l)
+
 React component for [Google reCAPTCHA v2][reCAPTCHA].
 
 ## Installation
@@ -15,8 +17,6 @@ npm install --save react-google-recaptcha
 All you need to do is [sign up for an API key pair][signup]. You will need the client key then you can use `<ReCAPTCHA />`.
 
 The default usage imports a wrapped component that loads the google recaptcha script asynchronously then instantiates a `reCAPTCHA` the user can then interact with.
-
-Here is a simple working [example on codesandbox.io](https://codesandbox.io/s/1y4zzjq37l).
 
 Code Example:
 ```jsx
