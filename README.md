@@ -49,8 +49,9 @@ Properties used to customise the rendering:
 | onExpired | func | *optional* callback when the challenge is expired and has to be redone by user. By default it will call the onChange with null to signify expired callback. |
 | onErrored | func | *optional* callback when the challenge errored, most likely due to network issues. |
 | stoken | string | *optional* set the stoken parameter, which allows the captcha to be used from different domains, see [reCAPTCHA secure-token] |
+| hl | string | *optional* set the hl parameter, which allows the captcha to be used from different languages, see [reCAPTCHA hl] |
 | size | enum | *optional* `compact`, `normal` or `invisible`. This allows you to change the size or do an invisible captcha |
-| badge | enum | *optional* `bottomright`, `bottomleft` or `inline`. Positions reCAPTCHA badge. *Only for invisible reCAPTCHA* |
+| badge | enum | *optional* `bottomright`, `bottomleft` or `inline`. Positions reCAPTCHA badge. *Only for invisible reCAPTCHA* |1
 
 ### Component Instance API
 
