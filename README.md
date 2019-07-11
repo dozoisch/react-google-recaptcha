@@ -51,7 +51,7 @@ Properties used to customise the rendering:
 | stoken | string | *optional* set the stoken parameter, which allows the captcha to be used from different domains, see [reCAPTCHA secure-token] |
 | hl | string | *optional* set the hl parameter, which allows the captcha to be used from different languages, see [reCAPTCHA hl] |
 | size | enum | *optional* `compact`, `normal` or `invisible`. This allows you to change the size or do an invisible captcha |
-| badge | enum | *optional* `bottomright`, `bottomleft` or `inline`. Positions reCAPTCHA badge. *Only for invisible reCAPTCHA* |1
+| badge | enum | *optional* `bottomright`, `bottomleft` or `inline`. Positions reCAPTCHA badge. *Only for invisible reCAPTCHA* |
 
 ### Component Instance API
 
