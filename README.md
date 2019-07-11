@@ -171,3 +171,4 @@ Pre `1.0.0` and `React < 16.4.1` support details in [0.14.0](https://github.com/
 [js_api]: https://developers.google.com/recaptcha/docs/display#js_api
 [rb]: https://github.com/react-bootstrap/react-bootstrap/
 [reCAPTCHA secure-token]: https://developers.google.com/recaptcha/docs/secure_token
+[reCAPTCHA hl]: https://developers.google.com/recaptcha/docs/language
