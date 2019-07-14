@@ -64,6 +64,7 @@ export default class ReCAPTCHA extends React.Component {
         "error-callback": this.handleErrored,
         size: this.props.size,
         stoken: this.props.stoken,
+        hl: this.props.hl,
         badge: this.props.badge,
       });
       this.captcha.appendChild(wrapper);
@@ -124,6 +125,7 @@ export default class ReCAPTCHA extends React.Component {
       stoken,
       grecaptcha,
       badge,
+      hl,
       ...childProps
     } = this.props;
     /* eslint-enable no-unused-vars */
@@ -143,6 +145,7 @@ ReCAPTCHA.propTypes = {
   onErrored: PropTypes.func,
   size: PropTypes.oneOf(["compact", "normal", "invisible"]),
   stoken: PropTypes.string,
+  hl: PropTypes.string,
   badge: PropTypes.oneOf(["bottomright", "bottomleft", "inline"]),
 };
 ReCAPTCHA.defaultProps = {
@@ -152,4 +155,5 @@ ReCAPTCHA.defaultProps = {
   tabindex: 0,
   size: "normal",
   badge: "bottomright",
+  hl: "en",
 };
