@@ -1,6 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+export function getOptions() {
+  return (typeof window !== "undefined" && window.recaptchaOptions) || {};
+}
+
 export default class ReCAPTCHA extends React.Component {
   constructor() {
     super();
@@ -53,6 +57,8 @@ export default class ReCAPTCHA extends React.Component {
 
   explicitRender() {
     if (this.props.grecaptcha && this.props.grecaptcha.render && this._widgetId === undefined) {
+      const hl = this.props.hl || getOptions().lang || undefined;
+
       const wrapper = document.createElement("div");
       this._widgetId = this.props.grecaptcha.render(wrapper, {
         sitekey: this.props.sitekey,
@@ -64,7 +70,7 @@ export default class ReCAPTCHA extends React.Component {
         "error-callback": this.handleErrored,
         size: this.props.size,
         stoken: this.props.stoken,
-        hl: this.props.hl,
+        hl,
         badge: this.props.badge,
       });
       this.captcha.appendChild(wrapper);
