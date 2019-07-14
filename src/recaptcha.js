@@ -155,5 +155,4 @@ ReCAPTCHA.defaultProps = {
   tabindex: 0,
   size: "normal",
   badge: "bottomright",
-  hl: "en",
 };
