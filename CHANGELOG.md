@@ -1,7 +1,15 @@
+v1.1.0 - Mon 12 Nov 2018 9:25 PST
+---------------------------------------
+
+- Add HL prop [(#141)](https://github.com/dozoisch/react-google-recaptcha/issues/141)
+- Upgrade babel and jest [(#140)](https://github.com/dozoisch/react-google-recaptcha/issues/140)
+
+
+
 v1.0.5 - Mon 12 Nov 2018 9:25 PST
 ---------------------------------------
 
-- Fix promise timeout [(#120)](https://github.com/dozoisch/react-google-recaptcha/issues/12-)
+- Fix promise timeout [(#120)](https://github.com/dozoisch/react-google-recaptcha/issues/120)
 
 
 
