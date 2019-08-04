@@ -114,13 +114,8 @@ ReactDOM.render(
 
 #### Global properties used by reCaptcha
 
-__lang__: *DEPRECATED* By default google reCaptcha infers the user's interface language. In order to overwrite the language and update the translation for the reCaptcha widget, you can create a global variable configuring the desired language via `lang`.
-
-*Instead use props.hl* reCaptcha now supports an hl property to be passed at render. The global lang parameter is no longer need and will be removed.
-
 __useRecaptchaNet__: If google.com is blocked, you can set `useRecaptchaNet` to `true` so that the component uses recaptcha.net instead.
 
-__removeOnUnmount__: *REMOVED* This was only useful for the lang changes. Lang is now changed through
 
 Example global properties:
 ```js
@@ -147,6 +142,12 @@ render(
   document.body
 );
 ```
+
+## Migrate to 2.0
+
+- __options.removeOnUnmount__: *REMOVED* This was only useful for the lang changes. Lang is now changed through the `hl` prop.
+- __options.lang__: *REMOVED* Instead pass it as the `hl` prop on the component.
+
 
 ## Notes on Requirements
 At least `React@16.4.1` is required due to `forwardRef` usage in the dependency [react-async-script](https://github.com/dozoisch/react-async-script).
