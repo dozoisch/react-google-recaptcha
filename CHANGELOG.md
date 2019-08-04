@@ -1,4 +1,12 @@
-v1.1.0 - Mon 12 Nov 2018 9:25 PST
+v2.0.0-rc.1 - Sat 3 Aug 2019 8:00 PST
+---------------------------------------
+
+- Remove lang and removeOnUnmount global options [(#143)](https://github.com/dozoisch/react-google-recaptcha/issues/143)
+- Upgrade to node 8, 10, 12 [(#143)](https://github.com/dozoisch/react-google-recaptcha/issues/143)
+- Update to react-async-script 1.1 [(#143)](https://github.com/dozoisch/react-google-recaptcha/issues/143)
+
+
+v1.1.0 - Sun 14 Jul 2019 10:56 PST
 ---------------------------------------
 
 - Add HL prop [(#141)](https://github.com/dozoisch/react-google-recaptcha/issues/141)
