@@ -10,12 +10,12 @@
   "scripts": {
     "build": "rm -rf lib && npm run build:cjs && npm run build:esm",
     "build:cjs": "babel src --out-dir lib",
-    "build:esm": "BABEL_ENV=esm babel src --out-dir lib/esm",
+    "build:esm": "cross-env BABEL_ENV=esm babel src --out-dir lib/esm",
     "prepare": "npm run build",
     "pretty": "prettier --write src/*.js ./*.js test/*.js",
     "lint": "eslint ./",
     "lint:fix": "eslint ./ --fix",
-    "test": "BABEL_ENV=development jest"
+    "test": "cross-env BABEL_ENV=development jest"
   },
   "repository": {
     "type": "git",
@@ -43,6 +43,7 @@
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.2",
+    "cross-env": "^5.2.1",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-prettier": "^2.6.2",
