@@ -6,6 +6,7 @@ export default class ReCAPTCHA extends React.Component {
     super();
     this.handleExpired = this.handleExpired.bind(this);
     this.handleErrored = this.handleErrored.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleRecaptchaRef = this.handleRecaptchaRef.bind(this);
   }
 
@@ -42,8 +43,8 @@ export default class ReCAPTCHA extends React.Component {
   handleExpired() {
     if (this.props.onExpired) {
       this.props.onExpired();
-    } else if (this.props.onChange) {
-      this.props.onChange(null);
+    } else {
+      this.handleChange(null);
     }
   }
 
@@ -51,12 +52,16 @@ export default class ReCAPTCHA extends React.Component {
     if (this.props.onErrored) this.props.onErrored();
   }
 
+  handleChange(token) {
+    if (this.props.onChange) this.props.onChange(token);
+  }
+
   explicitRender() {
     if (this.props.grecaptcha && this.props.grecaptcha.render && this._widgetId === undefined) {
       const wrapper = document.createElement("div");
       this._widgetId = this.props.grecaptcha.render(wrapper, {
         sitekey: this.props.sitekey,
-        callback: this.props.onChange,
+        callback: this.handleChange,
         theme: this.props.theme,
         type: this.props.type,
         tabindex: this.props.tabindex,
