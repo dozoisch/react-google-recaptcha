@@ -1,3 +1,10 @@
+v2.0.1 - Sat 14 Sep 2019 12:00 PST
+---------------------------------------
+
+- Fix onChange was using the function passed at mount time [(#154)](https://github.com/dozoisch/react-google-recaptcha/issues/154)
+
+
+
 v2.0.0-rc.1 - Sat 3 Aug 2019 8:00 PST
 ---------------------------------------
 
