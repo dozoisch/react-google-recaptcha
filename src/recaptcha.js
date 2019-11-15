@@ -1,7 +1,7 @@
-import React from "react";
+import { Component } from "react";
 import PropTypes from "prop-types";
 
-export default class ReCAPTCHA extends React.Component {
+export default class ReCAPTCHA extends Component {
   constructor() {
     super();
     this.handleExpired = this.handleExpired.bind(this);
