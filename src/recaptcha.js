@@ -60,7 +60,7 @@ export default class ReCAPTCHA extends React.Component {
     if (this.props.onErrored) {
       this.props.onErrored();
     }
-    if(this.executionReject){
+    if (this.executionReject) {
       this.executionReject();
       delete this.executionResolve;
       delete this.executionReject;
@@ -71,7 +71,7 @@ export default class ReCAPTCHA extends React.Component {
     if (this.props.onChange) {
       this.props.onChange(token);
     }
-    if(this.executionResolve) {
+    if (this.executionResolve) {
       this.executionResolve(token);
       delete this.executionReject;
       delete this.executionResolve;
