@@ -88,6 +88,70 @@ describe("ReCAPTCHA", () => {
     instance._internalRef.current.execute();
     expect(grecaptchaMock.execute).toBeCalledWith(WIDGET_ID);
   });
+  it("executeAsync, should call grecaptcha.execute with the widget id", () => {
+    const WIDGET_ID = "someWidgetId";
+    const grecaptchaMock = {
+      render() {
+        return WIDGET_ID;
+      },
+      execute: jest.fn(),
+    };
+    // wrapping component example that applies a ref to ReCAPTCHA
+    class WrappingComponent extends React.Component {
+      constructor(props) {
+        super(props);
+        this._internalRef = React.createRef();
+      }
+      render() {
+        return (
+          <div>
+            <ReCAPTCHA
+              sitekey="xxx"
+              size="invisible"
+              grecaptcha={grecaptchaMock}
+              onChange={jest.fn()}
+              ref={this._internalRef}
+            />
+          </div>
+        );
+      }
+    }
+    const instance = ReactTestUtils.renderIntoDocument(React.createElement(WrappingComponent));
+    instance._internalRef.current.execute();
+    expect(grecaptchaMock.execute).toBeCalledWith(WIDGET_ID);
+  });
+  it("executeAsync, should return a promise", () => {
+    const WIDGET_ID = "someWidgetId";
+    const grecaptchaMock = {
+      render() {
+        return WIDGET_ID;
+      },
+      execute: jest.fn(),
+    };
+    // wrapping component example that applies a ref to ReCAPTCHA
+    class WrappingComponent extends React.Component {
+      constructor(props) {
+        super(props);
+        this._internalRef = React.createRef();
+      }
+      render() {
+        return (
+          <div>
+            <ReCAPTCHA
+              sitekey="xxx"
+              size="invisible"
+              grecaptcha={grecaptchaMock}
+              onChange={jest.fn()}
+              ref={this._internalRef}
+            />
+          </div>
+        );
+      }
+    }
+    const instance = ReactTestUtils.renderIntoDocument(React.createElement(WrappingComponent));
+    let result = instance._internalRef.current.executeAsync();
+    expect(result).toBeInstanceOf(Promise);
+  });
   describe("Expired", () => {
     it("should call onChange with null when response is expired", () => {
       const WIDGET_ID = "someWidgetId";
