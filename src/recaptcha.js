@@ -39,7 +39,7 @@ export default class ReCAPTCHA extends React.Component {
       this.executionResolve = resolve;
       this.executionReject = reject;
       this.execute();
-    })
+    });
   }
 
   reset() {
@@ -66,7 +66,7 @@ export default class ReCAPTCHA extends React.Component {
       delete this.executionReject;
     }
   }
-  
+
   handleChange(token) {
     if (this.props.onChange) {
       this.props.onChange(token);
