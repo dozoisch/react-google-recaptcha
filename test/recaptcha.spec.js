@@ -120,13 +120,17 @@ describe("ReCAPTCHA", () => {
     instance._internalRef.current.executeAsync();
     expect(grecaptchaMock.execute).toBeCalledWith(WIDGET_ID);
   });
-  it("executeAsync, should return a promise", () => {
+  it("executeAsync, should return a promise that resolves with the token", () => {
     const WIDGET_ID = "someWidgetId";
+    const TOKEN = "someToken";
     const grecaptchaMock = {
-      render() {
+      render(_, { callback }) {
+        this.callback = callback;
         return WIDGET_ID;
       },
-      execute: jest.fn(),
+      execute() {
+        this.callback(TOKEN);
+      },
     };
     // wrapping component example that applies a ref to ReCAPTCHA
     class WrappingComponent extends React.Component {
@@ -149,8 +153,11 @@ describe("ReCAPTCHA", () => {
       }
     }
     const instance = ReactTestUtils.renderIntoDocument(React.createElement(WrappingComponent));
-    let result = instance._internalRef.current.executeAsync();
-    expect(result).toBeInstanceOf(Promise);
+    const executeAsyncDirectValue = instance._internalRef.current.executeAsync();
+    expect(executeAsyncDirectValue).toBeInstanceOf(Promise);
+    return executeAsyncDirectValue.then(executeAsyncResolveValue => {
+      expect(executeAsyncResolveValue).toBe(TOKEN);
+    });
   });
   describe("Expired", () => {
     it("should call onChange with null when response is expired", () => {
