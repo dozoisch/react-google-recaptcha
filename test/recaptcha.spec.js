@@ -117,7 +117,7 @@ describe("ReCAPTCHA", () => {
       }
     }
     const instance = ReactTestUtils.renderIntoDocument(React.createElement(WrappingComponent));
-    instance._internalRef.current.execute();
+    instance._internalRef.current. executeAsync();
     expect(grecaptchaMock.execute).toBeCalledWith(WIDGET_ID);
   });
   it("executeAsync, should return a promise", () => {
