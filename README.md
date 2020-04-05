@@ -103,6 +103,7 @@ ReactDOM.render(
       ref={recaptchaRef}
       size="invisible"
       sitekey="Your client site key"
+      onChange={onChange}
     />
   </form>,
   document.body
