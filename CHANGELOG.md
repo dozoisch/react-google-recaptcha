@@ -1,3 +1,9 @@
+v2.1.0 - Fri 5 Jun 2020 22:05 PST
+---------------------------------------
+- Add promise based Execution [(#163)](https://github.com/dozoisch/react-google-recaptcha/issues/163)
+
+
+
 v2.0.1 - Sat 14 Sep 2019 12:00 PST
 ---------------------------------------
 
