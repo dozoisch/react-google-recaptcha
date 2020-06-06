@@ -62,6 +62,8 @@ The component instance also has some utility functions that can be called. These
 - `reset()` forces reset. See the [JavaScript API doc][js_api]
 - `execute()` programmatically invoke the challenge
   - need to call when using `"invisible"` reCAPTCHA - [example below](#invisible-recaptcha)
+- `executeAsync()` programmatically invoke the challenge and return a promise that resolves to the token or errors(if encountered).
+  - alternative approach to `execute()` in combination with the `onChange()` prop - [example below](#invisible-recaptcha)
 
 Example:
 ```javascript
@@ -106,6 +108,39 @@ ReactDOM.render(
       onChange={onChange}
     />
   </form>,
+  document.body
+);
+```
+
+Additionally, you can use the `executeAsync` method to use a promise based approach.
+
+```jsx
+import ReCAPTCHA from "react-google-recaptcha";
+
+
+const ReCAPTCHAForm = (props) => {
+  const recaptchaRef = React.useRef();
+
+  const onSubmitWithReCAPTCHA = async () => {
+    const token = await recaptchaRef.current.executeAsync();
+
+    // apply to form data
+  }
+
+  return (
+    <form onSubmit={onSubmitWithReCAPTCHA}>
+      <ReCAPTCHA
+        ref={recaptchaRef}
+        size="invisible"
+        sitekey="Your client site key"
+      />
+    </form>
+  )
+
+}
+
+ReactDOM.render(
+  <ReCAPTCHAForm />,
   document.body
 );
 ```

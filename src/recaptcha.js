@@ -34,6 +34,14 @@ export default class ReCAPTCHA extends React.Component {
     }
   }
 
+  executeAsync() {
+    return new Promise((resolve, reject) => {
+      this.executionResolve = resolve;
+      this.executionReject = reject;
+      this.execute();
+    });
+  }
+
   reset() {
     if (this.props.grecaptcha && this._widgetId !== undefined) {
       this.props.grecaptcha.reset(this._widgetId);
@@ -49,11 +57,25 @@ export default class ReCAPTCHA extends React.Component {
   }
 
   handleErrored() {
-    if (this.props.onErrored) this.props.onErrored();
+    if (this.props.onErrored) {
+      this.props.onErrored();
+    }
+    if (this.executionReject) {
+      this.executionReject();
+      delete this.executionResolve;
+      delete this.executionReject;
+    }
   }
 
   handleChange(token) {
-    if (this.props.onChange) this.props.onChange(token);
+    if (this.props.onChange) {
+      this.props.onChange(token);
+    }
+    if (this.executionResolve) {
+      this.executionResolve(token);
+      delete this.executionReject;
+      delete this.executionResolve;
+    }
   }
 
   explicitRender() {
