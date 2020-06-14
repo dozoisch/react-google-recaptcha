@@ -88,7 +88,7 @@ render() {
 
 ### Invisible reCAPTCHA
 
-[Invisible reCAPTCHA](https://developers.google.com/recaptcha/docs/versions)
+[▶ Codesandbox invisible example](https://codesandbox.io/s/gifted-cache-10q74jj593)
 
 See the [reCAPTCHA documentation](https://developers.google.com/recaptcha/docs/invisible) to see how to configure it.
 
