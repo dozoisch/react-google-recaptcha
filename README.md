@@ -41,17 +41,18 @@ Properties used to customise the rendering:
 
 | Name | Type | Description |
 |:---- | ---- | ------ |
-| sitekey | string | The API client key |
-| onChange | func | The function to be called when the user successfully completes the captcha |
-| theme | enum | *optional* `light` or `dark` The theme of the widget *(__defaults:__ `light`)*. See [example][docs_theme]
-| type | enum | *optional* `image` or `audio` The type of initial captcha *(__defaults:__ `image`)*
-| tabindex | number | *optional* The tabindex on the element *(__default:__ `0`)*
-| onExpired | func | *optional* callback when the challenge is expired and has to be redone by user. By default it will call the onChange with null to signify expired callback. |
-| onErrored | func | *optional* callback when the challenge errored, most likely due to network issues. |
-| stoken | string | *optional* set the stoken parameter, which allows the captcha to be used from different domains, see [reCAPTCHA secure-token] |
-| hl | string | *optional* set the hl parameter, which allows the captcha to be used from different languages, see [reCAPTCHA hl] |
-| size | enum | *optional* `compact`, `normal` or `invisible`. This allows you to change the size or do an invisible captcha |
+| asyncScriptOnLoad | func | *optional* callback when the google recaptcha script has been loaded |
 | badge | enum | *optional* `bottomright`, `bottomleft` or `inline`. Positions reCAPTCHA badge. *Only for invisible reCAPTCHA* |
+| hl | string | *optional* set the hl parameter, which allows the captcha to be used from different languages, see [reCAPTCHA hl] |
+| onChange | func | The function to be called when the user successfully completes the captcha |
+| onErrored | func | *optional* callback when the challenge errored, most likely due to network issues. |
+| onExpired | func | *optional* callback when the challenge is expired and has to be redone by user. By default it will call the onChange with null to signify expired callback. |
+| sitekey | string | The API client key |
+| size | enum | *optional* `compact`, `normal` or `invisible`. This allows you to change the size or do an invisible captcha |
+| stoken | string | *optional* set the stoken parameter, which allows the captcha to be used from different domains, see [reCAPTCHA secure-token] |
+| tabindex | number | *optional* The tabindex on the element *(__default:__ `0`)*
+| type | enum | *optional* `image` or `audio` The type of initial captcha *(__defaults:__ `image`)*
+| theme | enum | *optional* `light` or `dark` The theme of the widget *(__defaults:__ `light`)*. See [example][docs_theme]
 
 ### Component Instance API
 
