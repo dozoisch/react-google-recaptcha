@@ -93,6 +93,7 @@ export default class ReCAPTCHA extends React.Component {
         stoken: this.props.stoken,
         hl: this.props.hl,
         badge: this.props.badge,
+        isolated: this.props.isolated,
       });
       this.captcha.appendChild(wrapper);
     }
@@ -153,6 +154,7 @@ export default class ReCAPTCHA extends React.Component {
       grecaptcha,
       badge,
       hl,
+      isolated,
       ...childProps
     } = this.props;
     /* eslint-enable no-unused-vars */
@@ -174,6 +176,7 @@ ReCAPTCHA.propTypes = {
   stoken: PropTypes.string,
   hl: PropTypes.string,
   badge: PropTypes.oneOf(["bottomright", "bottomleft", "inline"]),
+  isolated: PropTypes.bool,
 };
 ReCAPTCHA.defaultProps = {
   onChange: () => {},

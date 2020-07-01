@@ -53,6 +53,7 @@ Properties used to customise the rendering:
 | tabindex | number | *optional* The tabindex on the element *(__default:__ `0`)*
 | type | enum | *optional* `image` or `audio` The type of initial captcha *(__defaults:__ `image`)*
 | theme | enum | *optional* `light` or `dark` The theme of the widget *(__defaults:__ `light`)*. See [example][docs_theme]
+| isolated | bool | *optional* For plugin owners to not interfere with existing reCAPTCHA installations on a page. If true, this reCAPTCHA instance will be part of a separate ID space. *(__default:__ `false`)*
 
 ### Component Instance API
 
