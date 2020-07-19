@@ -44,6 +44,7 @@ Properties used to customise the rendering:
 | asyncScriptOnLoad | func | *optional* callback when the google recaptcha script has been loaded |
 | badge | enum | *optional* `bottomright`, `bottomleft` or `inline`. Positions reCAPTCHA badge. *Only for invisible reCAPTCHA* |
 | hl | string | *optional* set the hl parameter, which allows the captcha to be used from different languages, see [reCAPTCHA hl] |
+| isolated | bool | *optional* For plugin owners to not interfere with existing reCAPTCHA installations on a page. If true, this reCAPTCHA instance will be part of a separate ID space. *(__default:__ `false`)*
 | onChange | func | The function to be called when the user successfully completes the captcha |
 | onErrored | func | *optional* callback when the challenge errored, most likely due to network issues. |
 | onExpired | func | *optional* callback when the challenge is expired and has to be redone by user. By default it will call the onChange with null to signify expired callback. |
