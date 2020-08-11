@@ -1,5 +1,5 @@
 {
   "printWidth": 100,
   "trailingComma": "all",
-  "parser": "babylon"
+  "parser": "babel"
 }
