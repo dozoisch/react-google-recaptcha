@@ -43,7 +43,7 @@ export default class ReCAPTCHA extends React.Component {
     if (!("MutationObserver" in window)) return original;
     return new Promise((resolve, reject) => {
       const frame = document
-        .querySelector("iframe[src*=\"google.com/recaptcha/api2/bframe\"]")
+        .querySelector('iframe[src*="google.com/recaptcha/api2/bframe"]')
         ?.parentNode
         ?.parentNode;
       if (!frame) {
