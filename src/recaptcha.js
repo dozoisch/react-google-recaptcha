@@ -40,10 +40,10 @@ export default class ReCAPTCHA extends React.Component {
       this.executionReject = reject;
       this.execute();
     });
-    if (!('MutationObserver' in window)) return original;
+    if (!("MutationObserver" in window)) return original;
     return new Promise((resolve, reject) => {
       const frame = document
-        .querySelector('iframe[src*="google.com/recaptcha/api2/bframe"]')
+        .querySelector("iframe[src*=\"google.com/recaptcha/api2/bframe\"]")
         ?.parentNode
         ?.parentNode;
       if (!frame) {
@@ -55,7 +55,7 @@ export default class ReCAPTCHA extends React.Component {
           observer.disconnect();
         }
       });
-      observer.observe(frame, { attributes: true, attributeFilter: ['style'] });
+      observer.observe(frame, { attributes: true, attributeFilter: ["style"] });
       return original.then((result) => {
         observer.disconnect();
         resolve(result);
