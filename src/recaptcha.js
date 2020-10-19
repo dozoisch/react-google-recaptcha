@@ -56,10 +56,10 @@ export default class ReCAPTCHA extends React.Component {
         }
       });
       observer.observe(frame, { attributes: true, attributeFilter: ["style"] });
-      return original.then((result) => {
+      return original.then(result => {
         observer.disconnect();
         resolve(result);
-      }).catch((e) => {
+      }).catch(e => {
         observer.disconnect();
         reject(e);
       });
