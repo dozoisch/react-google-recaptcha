@@ -44,8 +44,11 @@ export default class ReCAPTCHA extends React.Component {
     return new Promise((resolve, reject) => {
       const frame = document
         .querySelector('iframe[src*="google.com/recaptcha/api2/bframe"]')
-        .parentNode
-        .parentNode;
+        ?.parentNode
+        ?.parentNode;
+      if (!frame) {
+        return original.then(resolve).catch(reject);
+      }
       const observer = new MutationObserver(() => {
         if (Number(frame.style.opacity) === 0) {
           reject(new Error('User clicked outside'));
