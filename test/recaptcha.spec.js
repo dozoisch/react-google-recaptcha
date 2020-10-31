@@ -22,7 +22,7 @@ describe("ReCAPTCHA", () => {
   });
 
   it("should call grecaptcha.render, when it is already loaded", () => {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       const grecaptchaMock = {
         render(node, options) {
           expect(node).toBeTruthy();
@@ -155,7 +155,7 @@ describe("ReCAPTCHA", () => {
     const instance = ReactTestUtils.renderIntoDocument(React.createElement(WrappingComponent));
     const executeAsyncDirectValue = instance._internalRef.current.executeAsync();
     expect(executeAsyncDirectValue).toBeInstanceOf(Promise);
-    return executeAsyncDirectValue.then(executeAsyncResolveValue => {
+    return executeAsyncDirectValue.then((executeAsyncResolveValue) => {
       expect(executeAsyncResolveValue).toBe(TOKEN);
     });
   });
