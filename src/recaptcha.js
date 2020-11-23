@@ -48,6 +48,12 @@ export default class ReCAPTCHA extends React.Component {
     }
   }
 
+  forceReset() {
+    if (this.props.grecaptcha) {
+      this.props.grecaptcha.reset();
+    }
+  }
+
   handleExpired() {
     if (this.props.onExpired) {
       this.props.onExpired();
@@ -109,29 +115,6 @@ export default class ReCAPTCHA extends React.Component {
 
   componentDidUpdate() {
     this.explicitRender();
-  }
-
-  componentWillUnmount() {
-    if (this._widgetId !== undefined) {
-      this.delayOfCaptchaIframeRemoving();
-      this.reset();
-    }
-  }
-
-  delayOfCaptchaIframeRemoving() {
-    const temporaryNode = document.createElement("div");
-    document.body.appendChild(temporaryNode);
-    temporaryNode.style.display = "none";
-
-    // move of the recaptcha to a temporary node
-    while (this.captcha.firstChild) {
-      temporaryNode.appendChild(this.captcha.firstChild);
-    }
-
-    // delete the temporary node after reset will be done
-    setTimeout(() => {
-      document.body.removeChild(temporaryNode);
-    }, 5000);
   }
 
   handleRecaptchaRef(elem) {
