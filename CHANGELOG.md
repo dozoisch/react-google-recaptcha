@@ -1,3 +1,12 @@
+v3.0.0-alpha.1 - Mon 23 Nov 2020 22:25 ET
+---------------------------------------
+- Add isolated prop [(#179)](https://github.com/dozoisch/react-google-recaptcha/issues/179)
+- Update dependencies 1 [(#187)](https://github.com/dozoisch/react-google-recaptcha/issues/187)
+- Update dependencies 2 [(#194)](https://github.com/dozoisch/react-google-recaptcha/issues/194)
+- Remove Timeout Removal [(#196)](https://github.com/dozoisch/react-google-recaptcha/issues/196)
+
+
+
 v2.1.0 - Fri 5 Jun 2020 22:05 PST
 ---------------------------------------
 - Add promise based Execution [(#163)](https://github.com/dozoisch/react-google-recaptcha/issues/163)
