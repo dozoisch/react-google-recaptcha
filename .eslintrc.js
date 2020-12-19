@@ -1,7 +1,7 @@
 "use strict";
 /* eslint-env node */
 module.exports = {
-  extends: ["eslint:recommended", "prettier", "prettier/react"],
+  extends: ["eslint:recommended", "plugin:react/recommended", "prettier", "prettier/react"],
   parserOptions: {
     sourceType: "module",
     ecmaVersion: "2020",
@@ -13,7 +13,7 @@ module.exports = {
     es6: true,
     browser: true,
   },
-  plugins: ["prettier"],
+  plugins: ["react", "prettier"],
   rules: {
     "prettier/prettier": "error",
   },
