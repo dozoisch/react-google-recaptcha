@@ -181,6 +181,26 @@ render(
 );
 ```
 
+#### Hiding the Recaptcha
+
+According to the [google docs](https://developers.google.com/recaptcha/docs/faq#id-like-to-hide-the-recaptcha-badge.-what-is-allowed) you are allowed to hide the badge as long as you include the reCAPTCHA branding visibly in the user flow. Please include the following text:
+
+```
+This site is protected by reCAPTCHA and the Google
+    <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+    <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+```
+
+If you wish to hide the badge you must add:
+
+```
+.grecaptcha-badge { visibility: hidden; }
+
+```
+
+to your css.
+
+
 ## Migrate to 2.0
 
 - __options.removeOnUnmount__: *REMOVED* This was only useful for the lang changes. Lang is now changed through the `hl` prop.
