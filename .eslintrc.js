@@ -1,10 +1,10 @@
 "use strict";
 /* eslint-env node */
 module.exports = {
-  extends: ["eslint:recommended", "plugin:react/recommended", "prettier", "prettier/react"],
+  extends: ["eslint:recommended", "plugin:react/recommended", "prettier"],
   parserOptions: {
     sourceType: "module",
-    ecmaVersion: "2020",
+    ecmaVersion: "latest",
     ecmaFeatures: {
       jsx: true,
     },
