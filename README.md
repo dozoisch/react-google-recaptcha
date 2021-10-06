@@ -162,6 +162,13 @@ window.recaptchaOptions = {
 };
 ```
 
+### CSP Nonce support
+```js
+window.recaptchaOptions = {
+  nonce: document.querySelector('meta[name=\'csp-nonce\']').getAttribute('content'),
+};
+```
+
 #### ReCaptcha loading google recaptcha script manually
 
 You can also use the barebone components doing the following. Using that component will oblige you to manage the grecaptcha dep and load the script by yourself.

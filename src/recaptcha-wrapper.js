@@ -17,4 +17,5 @@ function getURL() {
 export default makeAsyncScriptLoader(getURL, {
   callbackName,
   globalName,
+  attributes: getOptions().nonce ? {nonce: getOptions().nonce} : {},
 })(ReCAPTCHA);
