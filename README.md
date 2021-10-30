@@ -1,6 +1,6 @@
 # react-google-recaptcha
 
-[![Build Status][travis.img]][travis.url] [![npm version][npm.img]][npm.url] [![npm downloads][npm.dl.img]][npm.dl.url] [![Dependencies][deps.img]][deps.url]
+[![Build Status][ci.img]][ci.url] [![npm version][npm.img]][npm.url] [![npm downloads][npm.dl.img]][npm.dl.url]
 
 [![Edit react-google-recaptcha example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/1y4zzjq37l)
 
@@ -221,14 +221,12 @@ At least `React@16.4.1` is required due to `forwardRef` usage in the dependency 
 
 Pre `1.0.0` and `React < 16.4.1` support details in [0.14.0](https://github.com/dozoisch/react-google-recaptcha/tree/v0.14.0).
 
-[travis.img]: https://travis-ci.org/dozoisch/react-google-recaptcha.svg?branch=master
-[travis.url]: https://travis-ci.org/dozoisch/react-google-recaptcha
+[ci.img]: https://github.com/dozoisch/react-google-recaptcha/actions/workflows/standard-ci.yml/badge.svg?branch=master
+[ci.url]: https://github.com/dozoisch/react-google-recaptcha/actions/workflows/standard-ci.yml
 [npm.img]: https://badge.fury.io/js/react-google-recaptcha.svg
 [npm.url]: http://badge.fury.io/js/react-google-recaptcha
 [npm.dl.img]: https://img.shields.io/npm/dm/react-google-recaptcha.svg
 [npm.dl.url]: https://www.npmjs.com/package/react-google-recaptcha
-[deps.img]: https://david-dm.org/dozoisch/react-google-recaptcha.svg
-[deps.url]: https://david-dm.org/dozoisch/react-google-recaptcha
 
 [reCAPTCHA]: https://developers.google.com/recaptcha/docs/display
 [signup]: http://www.google.com/recaptcha/admin
