@@ -1,14 +1,12 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import ReactTestUtils from "react-dom/test-utils";
+import { render } from "@testing-library/react";
+
 import ReCAPTCHA from "../src/recaptcha"; // eslint-disable-line no-unused-vars
 
 describe("ReCAPTCHA", () => {
   it("Rendered Component should be a div", () => {
-    const instance = ReactTestUtils.renderIntoDocument(
-      <ReCAPTCHA sitekey="xxx" onChange={jest.fn()} />,
-    );
-    expect(ReactDOM.findDOMNode(instance).nodeName).toBe("DIV");
+    const { container } = render(<ReCAPTCHA sitekey="xxx" onChange={jest.fn()} />);
+    expect(container.firstChild.nodeName).toBe("DIV");
   });
   it("Rendered Component should contained passed props", () => {
     const props = {
@@ -16,9 +14,9 @@ describe("ReCAPTCHA", () => {
       id: "superdefinedId",
       onChange: jest.fn(),
     };
-    const instance = ReactTestUtils.renderIntoDocument(<ReCAPTCHA sitekey="xxx" {...props} />);
-    expect(ReactDOM.findDOMNode(instance).id).toBe(props.id);
-    expect(ReactDOM.findDOMNode(instance).className).toBe(props.className);
+    const { container } = render(<ReCAPTCHA sitekey="xxx" {...props} />);
+    expect(container.firstChild.id).toBe(props.id);
+    expect(container.firstChild.className).toBe(props.className);
   });
 
   it("should call grecaptcha.render, when it is already loaded", () => {
@@ -30,10 +28,7 @@ describe("ReCAPTCHA", () => {
           resolve();
         },
       };
-      const instance = ReactTestUtils.renderIntoDocument(
-        <ReCAPTCHA sitekey="xxx" grecaptcha={grecaptchaMock} onChange={jest.fn()} />,
-      );
-      expect(instance).toBeTruthy();
+      render(<ReCAPTCHA sitekey="xxx" grecaptcha={grecaptchaMock} onChange={jest.fn()} />);
     });
   });
   it("reset, should call grecaptcha.reset with the widget id", () => {
@@ -45,7 +40,7 @@ describe("ReCAPTCHA", () => {
       reset: jest.fn(),
     };
     const ReCaptchaRef = React.createRef();
-    ReactTestUtils.renderIntoDocument(
+    render(
       <ReCAPTCHA
         sitekey="xxx"
         grecaptcha={grecaptchaMock}
@@ -84,8 +79,9 @@ describe("ReCAPTCHA", () => {
         );
       }
     }
-    const instance = ReactTestUtils.renderIntoDocument(React.createElement(WrappingComponent));
-    instance._internalRef.current.execute();
+    const wrappingRef = React.createRef();
+    render(<WrappingComponent ref={wrappingRef} />);
+    wrappingRef.current._internalRef.current.execute();
     expect(grecaptchaMock.execute).toBeCalledWith(WIDGET_ID);
   });
   it("executeAsync, should call grecaptcha.execute with the widget id", () => {
@@ -116,8 +112,9 @@ describe("ReCAPTCHA", () => {
         );
       }
     }
-    const instance = ReactTestUtils.renderIntoDocument(React.createElement(WrappingComponent));
-    instance._internalRef.current.executeAsync();
+    const wrappingRef = React.createRef();
+    render(<WrappingComponent ref={wrappingRef} />);
+    wrappingRef.current._internalRef.current.executeAsync();
     expect(grecaptchaMock.execute).toBeCalledWith(WIDGET_ID);
   });
   it("executeAsync, should return a promise that resolves with the token", () => {
@@ -152,8 +149,10 @@ describe("ReCAPTCHA", () => {
         );
       }
     }
-    const instance = ReactTestUtils.renderIntoDocument(React.createElement(WrappingComponent));
-    const executeAsyncDirectValue = instance._internalRef.current.executeAsync();
+
+    const wrappingRef = React.createRef();
+    render(<WrappingComponent ref={wrappingRef} />);
+    const executeAsyncDirectValue = wrappingRef.current._internalRef.current.executeAsync();
     expect(executeAsyncDirectValue).toBeInstanceOf(Promise);
     return executeAsyncDirectValue.then((executeAsyncResolveValue) => {
       expect(executeAsyncResolveValue).toBe(TOKEN);
@@ -169,7 +168,7 @@ describe("ReCAPTCHA", () => {
         },
       };
       const ReCaptchaRef = React.createRef();
-      ReactTestUtils.renderIntoDocument(
+      render(
         <ReCAPTCHA
           sitekey="xxx"
           grecaptcha={grecaptchaMock}
@@ -190,7 +189,7 @@ describe("ReCAPTCHA", () => {
         },
       };
       const ReCaptchaRef = React.createRef();
-      ReactTestUtils.renderIntoDocument(
+      render(
         <ReCAPTCHA
           sitekey="xxx"
           grecaptcha={grecaptchaMock}
@@ -214,7 +213,7 @@ describe("ReCAPTCHA", () => {
         },
       };
       const ReCaptchaRef = React.createRef();
-      ReactTestUtils.renderIntoDocument(
+      render(
         <ReCAPTCHA
           sitekey="xxx"
           grecaptcha={grecaptchaMock}

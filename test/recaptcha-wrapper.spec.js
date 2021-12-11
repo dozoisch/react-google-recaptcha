@@ -1,5 +1,5 @@
 import React from "react";
-import ReactTestUtils from "react-dom/test-utils";
+import { render } from "@testing-library/react";
 import ReCAPTCHA from "../src/recaptcha-wrapper";
 
 const VALUE = "some value";
@@ -30,9 +30,8 @@ describe("ReCAPTCHAWrapper", () => {
   });
   it("should proxy functions", () => {
     const ReCaptchaRef = React.createRef();
-    ReactTestUtils.renderIntoDocument(
-      <ReCAPTCHA sitekey="xxx" ref={ReCaptchaRef} onChange={jest.fn()} />,
-    );
+
+    render(<ReCAPTCHA sitekey="xxx" ref={ReCaptchaRef} onChange={jest.fn()} />);
     expect(ReCaptchaRef.current.getValue()).toBe(VALUE);
   });
 });
