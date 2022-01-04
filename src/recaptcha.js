@@ -95,23 +95,23 @@ export default class ReCAPTCHA extends React.Component {
       renderer = this.props.grecaptcha.enterprise.render;
     }
     if (renderer && this._widgetId === undefined) {
-    const wrapper = document.createElement("div");
-    this._widgetId = renderer.render(wrapper, {
-      sitekey: this.props.sitekey,
-      callback: this.handleChange,
-      theme: this.props.theme,
-      type: this.props.type,
-      tabindex: this.props.tabindex,
-      "expired-callback": this.handleExpired,
-      "error-callback": this.handleErrored,
-      size: this.props.size,
-      stoken: this.props.stoken,
-      hl: this.props.hl,
-      badge: this.props.badge,
-      isolated: this.props.isolated,
-    });
-    this.captcha.appendChild(wrapper);
-    // }
+      const wrapper = document.createElement("div");
+      this._widgetId = renderer.render(wrapper, {
+        sitekey: this.props.sitekey,
+        callback: this.handleChange,
+        theme: this.props.theme,
+        type: this.props.type,
+        tabindex: this.props.tabindex,
+        "expired-callback": this.handleExpired,
+        "error-callback": this.handleErrored,
+        size: this.props.size,
+        stoken: this.props.stoken,
+        hl: this.props.hl,
+        badge: this.props.badge,
+        isolated: this.props.isolated,
+      });
+      this.captcha.appendChild(wrapper);
+    }
     if (this._executeRequested && this.props.grecaptcha && this._widgetId !== undefined) {
       this._executeRequested = false;
       this.execute();
