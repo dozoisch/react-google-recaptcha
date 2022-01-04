@@ -10,10 +10,10 @@ function getOptions() {
 
 function getURL() {
   const dynamicOptions = getOptions();
-  if (dynamicOptions.enterprise) {
-    return `https://www.google.com/recaptcha/api.js?onload=${callbackName}&render=explicit`;
-  }
   const hostname = dynamicOptions.useRecaptchaNet ? "recaptcha.net" : "www.google.com";
+  if (dynamicOptions.enterprise) {
+    `https://${hostname}/recaptcha/enterprise.js?onload=${callbackName}&render=explicit`;
+  }
   return `https://${hostname}/recaptcha/api.js?onload=${callbackName}&render=explicit`;
 }
 
