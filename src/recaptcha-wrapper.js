@@ -17,14 +17,6 @@ function getURL() {
   return `https://${hostname}/recaptcha/api.js?onload=${callbackName}&render=explicit`;
 }
 
-function getGlobalName() {
-  const dynamicOptions = getOptions();
-  if (dynamicOptions.enterprise) {
-    return "grecaptcha.enterprise";
-  }
-  return "grecaptcha";
-}
-
 export default makeAsyncScriptLoader(getURL, {
   callbackName,
   globalName,
