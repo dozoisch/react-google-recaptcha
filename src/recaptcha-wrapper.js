@@ -27,6 +27,6 @@ function getGlobalName() {
 
 export default makeAsyncScriptLoader(getURL, {
   callbackName,
-  globalName: getGlobalName(),
+  globalName,
   attributes: getOptions().nonce ? { nonce: getOptions().nonce } : {},
 })(ReCAPTCHA);
