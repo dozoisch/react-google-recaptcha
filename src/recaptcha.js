@@ -96,7 +96,6 @@ export default class ReCAPTCHA extends React.Component {
   }
 
   explicitRender() {
-    debugger;
     let render = this.props.grecaptcha && this.props.grecaptcha.render;
     if (
       this.props.grecaptcha &&
