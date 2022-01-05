@@ -55,7 +55,7 @@ export default class ReCAPTCHA extends React.Component {
       resetter = this.props.grecaptcha.enterprise.reset;
     }
     if (this.props.grecaptcha && this._widgetId !== undefined) {
-      this.props.grecaptcha.resetter(this._widgetId);
+      resetter(this._widgetId);
     }
   }
 
