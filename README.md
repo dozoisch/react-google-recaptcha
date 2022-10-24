@@ -208,18 +208,6 @@ If you wish to hide the badge you must add:
 to your css.
 
 
-## Migrate to 2.0
-
-- __options.removeOnUnmount__: *REMOVED* This was only useful for the lang changes. Lang is now changed through the `hl` prop.
-- __options.lang__: *REMOVED* Instead pass it as the `hl` prop on the component.
-
-
-## Notes on Requirements
-At least `React@16.4.1` is required due to `forwardRef` usage in the dependency [react-async-script](https://github.com/dozoisch/react-async-script).
-
-## Notes
-
-Pre `1.0.0` and `React < 16.4.1` support details in [0.14.0](https://github.com/dozoisch/react-google-recaptcha/tree/v0.14.0).
 
 [ci.img]: https://github.com/dozoisch/react-google-recaptcha/actions/workflows/standard-ci.yml/badge.svg?branch=master
 [ci.url]: https://github.com/dozoisch/react-google-recaptcha/actions/workflows/standard-ci.yml
