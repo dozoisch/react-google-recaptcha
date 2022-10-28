@@ -162,11 +162,18 @@ window.recaptchaOptions = {
 };
 ```
 
-### CSP Nonce support
+#### CSP Nonce support
 ```js
 window.recaptchaOptions = {
   nonce: document.querySelector('meta[name=\'csp-nonce\']').getAttribute('content'),
 };
+```
+
+#### Trusted Types support
+```js
+window.recaptchaOptions = {
+  trustedTypes: true,
+}
 ```
 
 #### ReCaptcha loading google recaptcha script manually
