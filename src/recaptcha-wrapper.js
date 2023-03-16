@@ -15,7 +15,7 @@ function getURL() {
     const policy = self.trustedTypes.createPolicy('react-google-recaptcha', {
       createScriptURL: (_ignored) => `https://${hostname}/recaptcha/api.js?onload=${callbackName}&render=explicit&trustedtypes=true`
     });
-    return policy.create('_ignored');
+    return policy.createScriptURL('_ignored');
   }
   return `https://${hostname}/recaptcha/api.js?onload=${callbackName}&render=explicit`;
 }
