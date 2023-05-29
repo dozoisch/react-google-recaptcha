@@ -11,6 +11,9 @@ function getOptions() {
 function getURL() {
   const dynamicOptions = getOptions();
   const hostname = dynamicOptions.useRecaptchaNet ? "recaptcha.net" : "www.google.com";
+  if (dynamicOptions.enterprise) {
+    return `https://${hostname}/recaptcha/enterprise.js?onload=${callbackName}&render=explicit`;
+  }
   return `https://${hostname}/recaptcha/api.js?onload=${callbackName}&render=explicit`;
 }
 

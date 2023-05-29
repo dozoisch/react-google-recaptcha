@@ -154,11 +154,13 @@ ReactDOM.render(
 
 __useRecaptchaNet__: If google.com is blocked, you can set `useRecaptchaNet` to `true` so that the component uses recaptcha.net instead.
 
+__enterprise__: if you want to use Google Enterprise Recaptcha, instead of the free version, set `enterprise` to `true`.
 
 Example global properties:
 ```js
 window.recaptchaOptions = {
   useRecaptchaNet: true,
+  enterprise: true,
 };
 ```
 

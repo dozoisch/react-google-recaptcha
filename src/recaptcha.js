@@ -11,8 +11,12 @@ export default class ReCAPTCHA extends React.Component {
   }
 
   getValue() {
-    if (this.props.grecaptcha && this._widgetId !== undefined) {
-      return this.props.grecaptcha.getResponse(this._widgetId);
+    let getResponse = this.props.grecaptcha && this.props.grecaptcha.getResponse;
+    if (this.props.grecaptcha.enterprise) {
+      getResponse = this.props.grecaptcha.enterprise.getResponse();
+    }
+    if (getResponse && this._widgetId !== undefined) {
+      return getResponse(this._widgetId);
     }
     return null;
   }
@@ -26,9 +30,12 @@ export default class ReCAPTCHA extends React.Component {
 
   execute() {
     const { grecaptcha } = this.props;
-
-    if (grecaptcha && this._widgetId !== undefined) {
-      return grecaptcha.execute(this._widgetId);
+    let executer = grecaptcha && grecaptcha.execute;
+    if (grecaptcha && grecaptcha.enterprise && grecaptcha.enterprise.execute) {
+      executer = grecaptcha.enterprise.execute;
+    }
+    if (executer && this._widgetId !== undefined) {
+      return executer(this._widgetId);
     } else {
       this._executeRequested = true;
     }
@@ -43,8 +50,12 @@ export default class ReCAPTCHA extends React.Component {
   }
 
   reset() {
+    let resetter = this.props.grecaptcha.reset;
+    if (this.props.grecaptcha.enterprise.reset) {
+      resetter = this.props.grecaptcha.enterprise.reset;
+    }
     if (this.props.grecaptcha && this._widgetId !== undefined) {
-      this.props.grecaptcha.reset(this._widgetId);
+      resetter(this._widgetId);
     }
   }
 
@@ -85,9 +96,17 @@ export default class ReCAPTCHA extends React.Component {
   }
 
   explicitRender() {
-    if (this.props.grecaptcha && this.props.grecaptcha.render && this._widgetId === undefined) {
+    let render = this.props.grecaptcha && this.props.grecaptcha.render;
+    if (
+      this.props.grecaptcha &&
+      this.props.grecaptcha.enterprise &&
+      this.props.grecaptcha.enterprise.render
+    ) {
+      render = this.props.grecaptcha.enterprise.render;
+    }
+    if (render && this._widgetId === undefined) {
       const wrapper = document.createElement("div");
-      this._widgetId = this.props.grecaptcha.render(wrapper, {
+      this._widgetId = render(wrapper, {
         sitekey: this.props.sitekey,
         callback: this.handleChange,
         theme: this.props.theme,
