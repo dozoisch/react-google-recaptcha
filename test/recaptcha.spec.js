@@ -120,15 +120,18 @@ describe("ReCAPTCHA", () => {
   it("executeAsync, should return a promise that resolves with the token", () => {
     const WIDGET_ID = "someWidgetId";
     const TOKEN = "someToken";
-    const grecaptchaMock = {
-      render(_, { callback }) {
-        this.callback = callback;
-        return WIDGET_ID;
-      },
-      execute() {
-        this.callback(TOKEN);
-      },
-    };
+    const grecaptchaMock = (() => {
+      let _callback;
+      return {
+        render(_, { callback }) {
+          _callback = callback;
+          return WIDGET_ID;
+        },
+        execute() {
+          _callback(TOKEN);
+        },
+      };
+    })();
     // wrapping component example that applies a ref to ReCAPTCHA
     class WrappingComponent extends React.Component {
       constructor(props) {
