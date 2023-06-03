@@ -45,10 +45,34 @@ export default class ReCAPTCHA extends React.Component {
   }
 
   executeAsync() {
-    return new Promise((resolve, reject) => {
+    const original = new Promise((resolve, reject) => {
       this.executionResolve = resolve;
       this.executionReject = reject;
       this.execute();
+    });
+    if (!("MutationObserver" in window)) return original;
+    return new Promise((resolve, reject) => {
+      const frame = document
+        .querySelector('iframe[src*="google.com/recaptcha/api2/bframe"]')
+        ?.parentNode
+        ?.parentNode;
+      if (!frame) {
+        return original.then(resolve).catch(reject);
+      }
+      const observer = new MutationObserver(() => {
+        if (Number(frame.style.opacity) === 0) {
+          reject(new Error('User clicked outside'));
+          observer.disconnect();
+        }
+      });
+      observer.observe(frame, { attributes: true, attributeFilter: ["style"] });
+      return original.then(result => {
+        observer.disconnect();
+        resolve(result);
+      }).catch(e => {
+        observer.disconnect();
+        reject(e);
+      });
     });
   }
 
