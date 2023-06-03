@@ -1,3 +1,19 @@
+v3.1.0 - Sat 3 Jun 2023 0:30 ET
+---------------------------------------
+- Add Enterprise Support 1 [(#239)](https://github.com/dozoisch/react-google-recaptcha/issues/239)
+- Add Enterprise Support 2 [(#270)](https://github.com/dozoisch/react-google-recaptcha/issues/270)
+- Add Nonce Support [(#221)](https://github.com/dozoisch/react-google-recaptcha/issues/221)
+- Update dependencies 1 [(#206)](https://github.com/dozoisch/react-google-recaptcha/issues/206)
+- Update dependencies 2 [(#207)](https://github.com/dozoisch/react-google-recaptcha/issues/207)
+- Update dependencies 3 [(#210)](https://github.com/dozoisch/react-google-recaptcha/issues/210)
+- Update dependencies 4 [(#211)](https://github.com/dozoisch/react-google-recaptcha/issues/211)
+- Update dependencies 5 [(#219)](https://github.com/dozoisch/react-google-recaptcha/issues/219)
+- Update dependencies 6 [(#226)](https://github.com/dozoisch/react-google-recaptcha/issues/226)
+- Update dependencies 7 [(#229)](https://github.com/dozoisch/react-google-recaptcha/issues/229)
+- Update dependencies 8 [(#235)](https://github.com/dozoisch/react-google-recaptcha/issues/235)
+- Update dependencies 9 [(#245)](https://github.com/dozoisch/react-google-recaptcha/issues/245)
+
+
 v3.0.0-alpha.1 - Mon 23 Nov 2020 22:25 ET
 ---------------------------------------
 - Add isolated prop [(#179)](https://github.com/dozoisch/react-google-recaptcha/issues/179)
